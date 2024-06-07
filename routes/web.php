@@ -25,6 +25,11 @@ Route::get('/halaman-search-admin', function (){
     return view('halaman-search-admin');
 });
 
+Route::get('/halaman-detail', function(){
+    return view('halaman-detail');
+
+});
+
 Route::get('/logout', function(){
     return view('index');
 });

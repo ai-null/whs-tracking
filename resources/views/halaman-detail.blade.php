@@ -97,7 +97,7 @@
                         </div>
                         <div class="data-4">
                             <div class="qty-wrapper">
-                                <div class="qty">
+                                <div class="qty"> 
                                     <ol class="qty1">
                                         <li>Qty :</li>
                                     </ol>
