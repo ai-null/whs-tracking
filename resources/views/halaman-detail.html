@@ -4,79 +4,83 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
 
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="./halaman-detail-fixed.css" />
+    <link rel="stylesheet" href="./halaman-detail.css" />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap"
     />
   </head>
   <body>
-    <div class="halaman-detail-fixed">
+    <div class="halaman-detail">
       <header class="header2">
-        <div class="header-image">
+        <div class="image-9-container">
           <img
             class="image-9-icon2"
             loading="lazy"
             alt=""
-            src="./public/image-91@2x.png"
+            src="./public/image-9@2x.png"
           />
 
-          <div class="header-title">
-            <a class="header-text2">Detail Tracking</a>
+          <div class="header-text-frame">
+            <b class="header-text2">Detail Tracking</b>
           </div>
         </div>
-        <div class="admin-welcome">
-          <div class="welcome-message">
-            <div class="greeting">
+        <div class="greeting">
+          <div class="header-image">
+            <div class="header-title">
               <div class="selamat-datang-admin2">Selamat datang, Admin!</div>
             </div>
-            <button class="tombol-logout2">
+            <div class="logout-button2">
               <img
-                class="logout-icon"
+                class="logout-icon1"
                 loading="lazy"
                 alt=""
                 src="./public/vector.svg"
               />
-            </button>
+            </div>
           </div>
         </div>
       </header>
-      <section class="content2">
-        <div class="data-table-parent">
-          <form class="data-table">
-            <div class="table-header">
-              <button class="tombol-detail2">
-                <div class="detail-icon">
-                  <img class="view-icon" alt="" src="./public/vector1.svg" />
+      <div class="footer">
+        <div class="frame-parent7">
+          <div class="frame-parent8">
+            <div class="frame-parent9">
+              <div class="frame-parent10">
+                <div class="vector-wrapper">
+                  <img class="vector-icon3" alt="" src="./public/vector1.svg" />
                 </div>
-                <div class="detail2">Detail</div>
-                <div class="tombol-detail-inner"></div>
-              </button>
-              <button class="tombol-report-condition2">
+                <b class="detail2">Detail</b>
+              </div>
+              <button
+                class="tombol-report-condition1"
+                id="tombolReportCondition"
+              >
                 <img
-                  class="tablerreport-icon2"
+                  class="tablerreport-icon1"
                   loading="lazy"
                   alt=""
                   src="./public/tablerreport.svg"
                 />
 
-                <div class="report-condition2">Report Condition</div>
-                <div class="tombol-report-condition-inner"></div>
+                <div class="report-condition1">Report Condition</div>
+                <div class="tombol-report-condition-item"></div>
               </button>
-              <button class="tombol-photos2">
+              <button class="tombol-photos1" id="tombolPhotos">
                 <img
-                  class="material-symbols-lightadd-to-icon2"
+                  class="material-symbols-lightadd-to-icon1"
+                  loading="lazy"
                   alt=""
                   src="./public/materialsymbolslightaddtophotosrounded.svg"
                 />
 
-                <div class="photos2">Photos</div>
-                <div class="tombol-photos-inner"></div>
+                <div class="photos1">Photos</div>
               </button>
-              <div class="divider"></div>
             </div>
-            <div class="head">
+            <div class="head1">
               <div class="detail3">Detail</div>
             </div>
             <div class="data-list">
@@ -124,8 +128,8 @@
                     </ol>
                   </div>
                 </div>
-                <div class="frame-div">
-                  <div class="div2">00988</div>
+                <div class="wrapper">
+                  <div class="div">00988</div>
                 </div>
               </div>
               <div class="data-5">
@@ -136,8 +140,8 @@
                     </ol>
                   </div>
                 </div>
-                <div class="wrapper1">
-                  <div class="div3">21834</div>
+                <div class="frame">
+                  <div class="div1">21834</div>
                 </div>
               </div>
               <div class="data-6">
@@ -148,8 +152,8 @@
                     </ol>
                   </div>
                 </div>
-                <div class="wrapper2">
-                  <div class="div4">27/5/2024</div>
+                <div class="wrapper1">
+                  <div class="div2">27/5/2024</div>
                 </div>
               </div>
               <div class="data-7">
@@ -161,16 +165,32 @@
                   </div>
                 </div>
                 <div class="picked-up-wrapper">
-                  <label class="picked-up">picked up</label>
+                  <div class="picked-up2">picked up</div>
                 </div>
               </div>
             </div>
-          </form>
-          <div class="footer">
-            <img class="footer-icon" alt="" src="./public/vector-15.svg" />
+          </div>
+          <div class="footer-icon-wrapper">
+            <img class="footer-icon" alt="" src="./public/footer-icon.svg" />
           </div>
         </div>
-      </section>
+      </div>
     </div>
+
+    <script>
+      var tombolReportCondition = document.getElementById("tombolReportCondition");
+      if (tombolReportCondition) {
+        tombolReportCondition.addEventListener("click", function (e) {
+          window.location.href = "./halaman-detail-report.html";
+        });
+      }
+      
+      var tombolPhotos = document.getElementById("tombolPhotos");
+      if (tombolPhotos) {
+        tombolPhotos.addEventListener("click", function (e) {
+          window.location.href = "./halaman-detail-photo.html";
+        });
+      }
+      </script>
   </body>
 </html>

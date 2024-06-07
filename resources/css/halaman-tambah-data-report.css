@@ -1,0 +1,373 @@
+.image-9-icon7 {
+  height: 51.7px;
+  width: 182px;
+  position: relative;
+  object-fit: cover;
+}
+.header-text7 {
+  position: relative;
+  white-space: nowrap;
+}
+.header-text-wrapper5,
+.image-9-parent5 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.header-text-wrapper5 {
+  flex-direction: column;
+  padding: 11px 0 0;
+}
+.image-9-parent5 {
+  flex-direction: row;
+  gap: 35px;
+  max-width: 100%;
+}
+.selamat-datang-admin7 {
+  position: relative;
+  font-weight: 300;
+  white-space: nowrap;
+}
+.selamat-datang-admin-wrapper4 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 2px 0 0;
+}
+.logout-icon3 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.tombol-logout2 {
+  text-decoration: none;
+  height: 30px;
+  width: 38px;
+  position: relative;
+}
+.user-actions {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 28px;
+}
+.header7,
+.top-navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 0 9.7px;
+  font-size: 20px;
+  color: #000;
+}
+.header7 {
+  align-self: stretch;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: #fff;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 26px 70px 25.3px 34px;
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  max-width: 100%;
+  gap: 20px;
+  text-align: left;
+  font-size: 24px;
+  color: #3f7cbd;
+  font-family: Inter;
+}
+.header-description-inner {
+  height: 44px;
+  width: 903px;
+  position: relative;
+  background-color: rgba(63, 124, 189, 0.2);
+  display: none;
+  max-width: 100%;
+}
+.detail-customer {
+  position: relative;
+  font-weight: 500;
+  z-index: 1;
+}
+.header-description2 {
+  align-self: stretch;
+  background-color: rgba(63, 124, 189, 0.2);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.tombol-tambah-data {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  flex-shrink: 0;
+  object-fit: contain;
+  cursor: pointer;
+}
+.delete-button3:hover,
+.edit-button:hover,
+.tombol-tambah-data:hover {
+  background-color: #e2e2e2;
+}
+.pt-balinusa-mitra-perkasa {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  padding-left: 27px;
+}
+.pt-balinusa-mitra-container {
+  position: relative;
+  font-weight: 500;
+  display: inline-block;
+  max-width: 100%;
+}
+.edit-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  width: 30px;
+  height: 29px;
+}
+.edit-icon {
+  position: absolute;
+  height: 88.51%;
+  width: 89.67%;
+  top: 11.49%;
+  right: 0;
+  bottom: 0;
+  left: 10.33%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  z-index: 1;
+}
+.edit-background-parent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 32.9px;
+  height: 29.6px;
+}
+.edit-button {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  height: 33px;
+  width: 34px;
+  position: relative;
+}
+.delete-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  width: 30px;
+  height: 29px;
+}
+.delete-icon {
+  position: absolute;
+  height: 80.33%;
+  width: 62.33%;
+  top: 19.67%;
+  right: 10.33%;
+  bottom: 0;
+  left: 27.33%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  z-index: 1;
+}
+.delete-background-parent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+}
+.delete-button3 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  height: 34px;
+  width: 35px;
+  position: relative;
+}
+.buttons,
+.pt-balinusa-mitra-perkasa-parent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.buttons {
+  width: 107px;
+  justify-content: center;
+  gap: 38px;
+}
+.pt-balinusa-mitra-perkasa-parent {
+  align-self: stretch;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 100%;
+}
+.content-header,
+.customer-detail {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+}
+.customer-detail {
+  align-self: stretch;
+  border-radius: 10px;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+}
+.content-header {
+  width: 902px;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 9px;
+}
+.content2,
+.div3 {
+  align-self: stretch;
+}
+.content2 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 20px 480px;
+  box-sizing: border-box;
+  max-width: 100%;
+  flex-shrink: 0;
+  text-align: left;
+  font-size: 20px;
+  color: #000;
+  font-family: Inter;
+}
+.div3 {
+  flex: 1;
+  position: relative;
+  font-weight: 500;
+}
+.data-cell {
+  width: 94px;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 41px;
+  box-sizing: border-box;
+}
+.data-row,
+.sort-icon {
+  align-self: stretch;
+  max-width: 100%;
+}
+.sort-icon {
+  position: relative;
+  overflow: hidden;
+  max-height: 100%;
+}
+.data-row {
+  width: 1039px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 27px;
+}
+.data-grid,
+.halaman-tambah-data-report {
+  display: flex;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+.data-grid {
+  width: 1301px;
+  height: 51px;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0 20px;
+  max-width: 100%;
+  flex-shrink: 0;
+}
+.halaman-tambah-data-report {
+  width: 100%;
+  height: 810px;
+  position: relative;
+  background-color: #fff;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0 0 499px;
+  gap: 62px;
+  letter-spacing: normal;
+  line-height: normal;
+  text-align: left;
+  font-size: 20px;
+  color: #000;
+  font-family: Inter;
+}
+@media screen and (max-width: 725px) {
+  .header7 {
+    padding-right: 35px;
+    box-sizing: border-box;
+  }
+  .halaman-tambah-data-report {
+    gap: 31px;
+  }
+}
+@media screen and (max-width: 650px) {
+  .pt-balinusa-mitra-perkasa-parent {
+    flex-wrap: wrap;
+  }
+  .content2 {
+    padding-bottom: 312px;
+    box-sizing: border-box;
+  }
+  .halaman-tambah-data-report {
+    height: auto;
+  }
+}
+@media screen and (max-width: 450px) {
+  .image-9-parent5 {
+    gap: 17px;
+  }
+  .detail-customer,
+  .div3,
+  .pt-balinusa-mitra-container {
+    font-size: 16px;
+  }
+  .halaman-tambah-data-report {
+    gap: 15px;
+  }
+}
