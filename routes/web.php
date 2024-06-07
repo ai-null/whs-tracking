@@ -24,3 +24,8 @@ Route::get('/login', function () {
 Route::get('/halaman-search-admin', function (){
     return view('halaman-search-admin');
 });
+
+Route::get('/halaman-detail', function(){
+    return view('halaman-detail');
+
+});
