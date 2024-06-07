@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
 
-    <link rel="stylesheet" href="./login-page.css" />
+    <link rel="stylesheet" href="/css/login-page.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;600;700&display=swap"
@@ -24,7 +24,7 @@
                 class="image-10-icon1"
                 loading="lazy"
                 alt=""
-                src="./public/image-101@2x.png"
+                src="/images/image-101@2x.png"
               />
             </div>
             <div class="welcome-back-please-login-to-wrapper">
@@ -51,7 +51,7 @@
         class="background-icon"
         loading="lazy"
         alt=""
-        src="./public/1484-1@2x.png"
+        src="/images/1484-1@2x.png"
       />
     </div>
 

@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
 
-    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="/css/index.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;600;700&display=swap"
@@ -20,14 +20,14 @@
         <img
           class="industrial-park-factory-buildi-icon"
           alt=""
-          src="./public/industrialparkfactorybuildingwarehouse-1@2x.png"
+          src="/images/industrialparkfactorybuildingwarehouse-1@2x.png"
         />
 
         <img
           class="image-10-icon"
           loading="lazy"
           alt=""
-          src="./public/image-10@2x.png"
+          src="/images/image-10@2x.png"
         />
       </header>
       <div class="welcome-parent">
@@ -47,7 +47,7 @@
       var adminLoginButton = document.getElementById("adminLoginButton");
       if (adminLoginButton) {
         adminLoginButton.addEventListener("click", function (e) {
-          window.location.href = "./login-page.html";
+          window.location.href = " {{ route('login') }} ";
         });
       }
       
