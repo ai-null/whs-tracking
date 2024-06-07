@@ -109,13 +109,6 @@
                 window.location.href = "";
             });
         }
-
-        var logoutButton = document.getElementById("logoutButton");
-        if (logoutButton) {
-            logoutButton.addEventListener("click", function(e) {
-                window.location.href = "/index";
-            });
-        }
     </script>
 
 </body>

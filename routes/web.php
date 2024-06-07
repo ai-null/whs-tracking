@@ -27,9 +27,4 @@ Route::get('/halaman-search-admin', function (){
 
 Route::get('/halaman-detail', function(){
     return view('halaman-detail');
-
-});
-
-Route::get('/logout', function(){
-    return view('index');
 });
