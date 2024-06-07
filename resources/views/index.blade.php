@@ -54,7 +54,7 @@
       var staffLoginButton = document.getElementById("staffLoginButton");
       if (staffLoginButton) {
         staffLoginButton.addEventListener("click", function (e) {
-          window.location.href = "./halaman-search-admin.html";
+          window.location.href = "/loginAdmin";
         });
       }
       </script>
