@@ -25,7 +25,7 @@
                     <div class="selamat-datang-admin-container">
                         <div class="selamat-datang-admin1">Selamat datang, Admin!</div>
                     </div>
-                    <a class="logout-button1">
+                    <a class="logout-button1" id="logoutButton">
                         <img class="logout-icon" loading="lazy" alt="" src="/images/vector.svg" />
                     </a>
                 </div>
@@ -73,7 +73,7 @@
                         </div>
                     </button>
                 </div>
-                <button class="button-detail-2">
+                <button class="button-detail-2" id="detailButton">
                     <div class="frame-parent4">
                         <div class="pt-tjiwi-kimia-wrapper">
                             <div class="pt-tjiwi-kimia">PT TJIWI KIMIA</div>
@@ -101,6 +101,23 @@
             </div>
         </section>
     </div>
+
+    <script>
+        var detailButton = document.getElementById("detailButton");
+        if (detailButton) {
+            detailButton.addEventListener("click", function(e) {
+                window.location.href = "";
+            });
+        }
+
+        var logoutButton = document.getElementById("logoutButton");
+        if (logoutButton) {
+            logoutButton.addEventListener("click", function(e) {
+                window.location.href = "/index";
+            });
+        }
+    </script>
+
 </body>
 
 </html>
