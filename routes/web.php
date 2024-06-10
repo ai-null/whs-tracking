@@ -21,11 +21,11 @@ Route::get('/login', function () {
     return view('login');
 })->name('login');
 
-Route::get('/halaman-search-admin', function (){
+Route::get('/halaman-search-admin', function () {
     return view('halaman-search-admin');
 });
 
-Route::get('/halaman-detail', function(){
+Route::get('/halaman-detail', function () {
     return view('halaman-detail');
 });
 
@@ -37,4 +37,19 @@ Route::get('/halaman-detail-photo', function () {
     return view('/halaman-detail-photo');
 })->name('detailPhoto');
 
+Route::get('/halaman-search-gudang', function () {
+    return view('/halaman-search-gudang');
+});
 
+Route::get('/halaman-tambah-data-customer', function () {
+    return view('/halaman-tambah-data-customer');
+})->name('dataCustomer');
+
+
+Route::get('/halaman-tambah-data-container', function () {
+    return view('/halaman-tambah-data-container');
+})->name('dataContainer');
+
+Route::get('/halaman-tambah-data-report', function () {
+    return view('/halaman-tambah-data-report');
+})->name('dataReport');
