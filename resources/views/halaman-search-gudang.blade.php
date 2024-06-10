@@ -52,7 +52,7 @@
               <b class="new">New</b>
             </button>
           </div>
-          <div class="button-detail-parent">
+          <div class="button-detail-parent" id="addNewCustomer">
             <button class="button-detail1">
               <div class="detail-button-labels">
                 <div class="sinar-siantar-031s">SINAR SIANTAR 031S</div>
@@ -102,7 +102,14 @@
       var newItemButton = document.getElementById("newItemButton");
       if (newItemButton) {
         newItemButton.addEventListener("click", function (e) {
-          window.location.href = "./halaman-tambah-data-container.html";
+          window.location.href = "";
+        });
+      }
+
+      var addNewCustomer = document.getElementById("addNewCustomer");
+      if (addNewCustomer) {
+        addNewCustomer.addEventListener("click", function (e) {
+          window.location.href = "";
         });
       }
       </script>

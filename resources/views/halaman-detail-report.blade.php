@@ -98,14 +98,14 @@
       var frameButton = document.getElementById("frameButton");
       if (frameButton) {
         frameButton.addEventListener("click", function (e) {
-          window.location.href = "./halaman-detail.html";
+          window.location.href = "";
         });
       }
       
       var tombolPhotos = document.getElementById("tombolPhotos");
       if (tombolPhotos) {
         tombolPhotos.addEventListener("click", function (e) {
-          window.location.href = "./halaman-detail-photo.html";
+          window.location.href = "";
         });
       }
       </script>

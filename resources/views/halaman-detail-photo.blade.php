@@ -112,14 +112,14 @@
       var frameButton = document.getElementById("frameButton");
       if (frameButton) {
         frameButton.addEventListener("click", function (e) {
-          window.location.href = "./halaman-detail.html";
+          window.location.href = "";
         });
       }
       
       var tombolReportCondition = document.getElementById("tombolReportCondition");
       if (tombolReportCondition) {
         tombolReportCondition.addEventListener("click", function (e) {
-          window.location.href = "./halaman-detail-report.html";
+          window.location.href = "";
         });
       }
       </script>

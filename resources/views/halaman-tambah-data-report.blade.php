@@ -106,14 +106,14 @@
       var tombolTambahData = document.getElementById("tombolTambahData");
       if (tombolTambahData) {
         tombolTambahData.addEventListener("click", function (e) {
-          window.location.href = "./halaman-tambah-data-customer.html";
+          window.location.href = "";
         });
       }
       
       var editButton = document.getElementById("editButton");
       if (editButton) {
         editButton.addEventListener("click", function (e) {
-          window.location.href = "./halaman-tambah-data-customer.html";
+          window.location.href = "";
         });
       }
       </script>
