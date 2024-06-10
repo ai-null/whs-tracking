@@ -47,7 +47,7 @@
       </header>
       <section class="frame-section">
         <div class="frame-parent12">
-          <button class="frame-parent13" id="frameButton">
+          <button class="frame-parent13" id="tomboldetail">
             <div class="vector-container">
               <img class="vector-icon5" alt="" src="/images/vector-1.svg" />
             </div>
@@ -109,17 +109,17 @@
     </div>
 
     <script>
-      var frameButton = document.getElementById("frameButton");
-      if (frameButton) {
-        frameButton.addEventListener("click", function (e) {
-          window.location.href = "";
+      var frameButton = document.getElementById("tomboldetail");
+      if (tomboldetail) {
+        tomboldetail.addEventListener("click", function (e) {
+          window.location.href = "/halaman-detail";
         });
       }
       
       var tombolReportCondition = document.getElementById("tombolReportCondition");
       if (tombolReportCondition) {
         tombolReportCondition.addEventListener("click", function (e) {
-          window.location.href = "";
+          window.location.href = "/halaman-detail-report";
         });
       }
       </script>
