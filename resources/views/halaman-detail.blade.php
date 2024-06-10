@@ -156,14 +156,14 @@
         var tombolReportCondition = document.getElementById("tombolReportCondition");
         if (tombolReportCondition) {
             tombolReportCondition.addEventListener("click", function(e) {
-                window.location.href = "";
+                window.location.href = "/halaman-detail-report";    
             });
         }
 
         var tombolPhotos = document.getElementById("tombolPhotos");
         if (tombolPhotos) {
             tombolPhotos.addEventListener("click", function(e) {
-                window.location.href = "";
+                window.location.href = "/halaman-detail-photo";
             });
         }
     </script>

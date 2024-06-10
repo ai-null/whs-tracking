@@ -28,3 +28,13 @@ Route::get('/halaman-search-admin', function (){
 Route::get('/halaman-detail', function(){
     return view('halaman-detail');
 });
+
+Route::get('/halaman-detail-report', function () {
+    return view('/halaman-detail-report');
+})->name('detailReport');
+
+Route::get('/halaman-detail-photo', function () {
+    return view('/halaman-detail-photo');
+})->name('detailPhoto');
+
+

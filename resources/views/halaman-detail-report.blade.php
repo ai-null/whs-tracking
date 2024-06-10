@@ -48,7 +48,7 @@
       <section class="halaman-detail-report-inner">
         <div class="frame-group">
           <div class="frame-container">
-            <button class="frame-button" id="frameButton">
+            <button class="frame-button" id="tomboldetail">
               <div class="detail-icon-wrapper">
                 <img
                   class="detail-icon"
@@ -95,17 +95,17 @@
     </div>
 
     <script>
-      var frameButton = document.getElementById("frameButton");
-      if (frameButton) {
-        frameButton.addEventListener("click", function (e) {
-          window.location.href = "";
+      var frameButton = document.getElementById("tomboldetail");
+      if (tomboldetail) {
+        tomboldetail.addEventListener("click", function (e) {
+          window.location.href = "/halaman-detail";
         });
       }
       
       var tombolPhotos = document.getElementById("tombolPhotos");
       if (tombolPhotos) {
         tombolPhotos.addEventListener("click", function (e) {
-          window.location.href = "";
+          window.location.href = "/halaman-detail-photo";
         });
       }
       </script>

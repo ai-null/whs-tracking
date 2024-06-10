@@ -109,6 +109,15 @@
                 window.location.href = "";
             });
         }
+
+        var buttons = document.getElementsByClassName('button-detail')
+        for (let index = 0; index < buttons.length; index++) {
+            const element = buttons[index];
+            element.addEventListener("click", function(e) {
+                window.location.href ="/halaman-detail"
+            })
+            
+        }
     </script>
 
 </body>
