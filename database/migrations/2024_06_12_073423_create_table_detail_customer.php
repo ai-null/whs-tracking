@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('Consignee');
             $table->string('Status');
             $table->string('Report_condition');
-            $table->string('id_container ');
+            $table->string('id_container');
             $table->date('date');
             $table->integer('Quantity');
             $table->integer('Volume');

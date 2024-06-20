@@ -18,6 +18,7 @@ Route::get('/', function () {
     return view('index');
 });
 
+// AUTHENTICATION
 Route::get('/login', function () {
     return view('login');
 })->name('login');
@@ -27,8 +28,11 @@ Route::get('/register', function () {
 })->name('register');
 
 Route::post('/login',[AuthController::class, 'login'])->name('login');
-
 Route::post('/register',[AuthController::class, 'register'])->name('register');
+// AUTHENTICATION
+
+
+
 
 Route::get('/halaman-search-admin', function () {
     return view('halaman-search-admin');
