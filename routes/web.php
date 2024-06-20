@@ -19,24 +19,23 @@ Route::get('/', function () {
 });
 
 // AUTHENTICATION
-Route::get('/login', function () {
-    return view('login');
-})->name('login');
+Route::prefix('auth')->group(function () {
+    Route::post('/login',[AuthController::class, 'login'])->name('login');
+    Route::get('/login', function () {
+        return view('login');
+    })->name('login');
 
-Route::get('/register', function () {
-    return view('register');
-})->name('register');
+    Route::post('/register',[AuthController::class, 'register'])->name('register');
+    Route::get('/register', function () {
+        return view('register');
+    })->name('register');
+});
 
-Route::post('/login',[AuthController::class, 'login'])->name('login');
-Route::post('/register',[AuthController::class, 'register'])->name('register');
-// AUTHENTICATION
-
-
-
+Route::middleware('')
 
 Route::get('/halaman-search-admin', function () {
     return view('halaman-search-admin');
-});
+})->name('halaman-search-admin');
 
 Route::get('/halaman-detail', function () {
     return view('halaman-detail');

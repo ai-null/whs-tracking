@@ -15,7 +15,7 @@
     <div class="login-page-inner">
 
       {{-- FORM LOGIN --}}
-      <form class="frame-parent21" action="/login" method="POST">
+      <form class="frame-parent21" action="{{route('login')}}" method="POST">
         @csrf
         
         <div class="frame-parent22">
@@ -48,14 +48,6 @@
     </div>
     <img class="background-icon" loading="lazy" alt="" src="/images/1484-1@2x.png" />
   </div>
-
-  {{-- <script>
-    var tombolSignIn = document.getElementById("tombolSignIn");
-    tombolSignIn.addEventListener("click", function(e) {
-      e.preventDefault();
-      window.location.href = "/halaman-search-gudang";
-    });
-  </script> --}}
 </body>
 
 </html>
