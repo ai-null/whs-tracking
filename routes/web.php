@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('index');
 
 // AUTHENTICATION
 Route::prefix('auth')->group(function () {
@@ -30,8 +30,6 @@ Route::prefix('auth')->group(function () {
         return view('register');
     })->name('register');
 });
-
-Route::middleware('')
 
 Route::get('/halaman-search-admin', function () {
     return view('halaman-search-admin');
