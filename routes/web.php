@@ -31,35 +31,42 @@ Route::prefix('auth')->group(function () {
     })->name('register');
 });
 
-Route::get('/halaman-search-admin', function () {
-    return view('halaman-search-admin');
-})->name('halaman-search-admin');
 
-Route::get('/halaman-detail', function () {
-    return view('halaman-detail');
+// ADMIN GUDANG 
+Route::prefix('admin')->middleware('auth')->group(function() {
+    Route::get('/halaman-search-gudang', function () {
+        return view('/halaman-search-gudang');
+    })->name('dashboardGudang');
+
+    Route::get('/halaman-tambah-data-customer', function () {
+        return view('/halaman-tambah-data-customer');
+    })->name('dataCustomer');
+
+    Route::get('/halaman-tambah-data-container', function () {
+        return view('/halaman-tambah-data-container');
+    })->name('dataContainer');
+    
+    Route::get('/halaman-tambah-data-report', function () {
+        return view('/halaman-tambah-data-report');
+    })->name('dataReport');
 });
 
-Route::get('/halaman-detail-report', function () {
-    return view('/halaman-detail-report');
-})->name('detailReport');
 
-Route::get('/halaman-detail-photo', function () {
-    return view('/halaman-detail-photo');
-})->name('detailPhoto');
-
-Route::get('/halaman-search-gudang', function () {
-    return view('/halaman-search-gudang');
+// ADMIN GATEWAY
+Route::prefix('staff')->group(function() {
+    Route::get('/halaman-search-admin', function () {
+        return view('halaman-search-admin');
+    })->name('halaman-search-admin');
+    
+    Route::get('/halaman-detail', function () {
+        return view('halaman-detail');
+    });
+    
+    Route::get('/halaman-detail-report', function () {
+        return view('/halaman-detail-report');
+    })->name('detailReport');
+    
+    Route::get('/halaman-detail-photo', function () {
+        return view('/halaman-detail-photo');
+    })->name('detailPhoto');
 });
-
-Route::get('/halaman-tambah-data-customer', function () {
-    return view('/halaman-tambah-data-customer');
-})->name('dataCustomer');
-
-
-Route::get('/halaman-tambah-data-container', function () {
-    return view('/halaman-tambah-data-container');
-})->name('dataContainer');
-
-Route::get('/halaman-tambah-data-report', function () {
-    return view('/halaman-tambah-data-report');
-})->name('dataReport');
