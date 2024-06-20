@@ -13,41 +13,49 @@
 <body>
   <div class="login-page">
     <div class="login-page-inner">
-      <form class="frame-parent21">
+
+      {{-- FORM LOGIN --}}
+      <form class="frame-parent21" action="/login" method="POST">
+        @csrf
+        
         <div class="frame-parent22">
           <div class="image-10-wrapper">
             <img class="image-10-icon1" loading="lazy" alt="" src="/images/image-101@2x.png" />
           </div>
+
           <div class="welcome-back-please-login-to-wrapper">
             <div class="welcome-back-please">
               Welcome back! please login to your account
             </div>
           </div>
+
           <div class="username-or-email-parent">
             <div class="username-or-email">Username or Email</div>
-            <input class="input-username-email" type="text" />
-
+            <input class="input-username-email" type="email" name="email"/>
             <div class="password">Password</div>
-            <input class="input-password" type="text" />
+            <input class="input-password" type="password" name="password"/>
           </div>
+
         </div>
+
         <div class="tombol-sign-in-wrapper">
-          <button class="tombol-sign-in" id="tombolSignIn">
+          <button class="tombol-sign-in" id="tombolSignIn" type="submit">
             <div class="sign-in">Sign in</div>
           </button>
         </div>
+
       </form>
     </div>
     <img class="background-icon" loading="lazy" alt="" src="/images/1484-1@2x.png" />
   </div>
 
-  <script>
+  {{-- <script>
     var tombolSignIn = document.getElementById("tombolSignIn");
     tombolSignIn.addEventListener("click", function(e) {
       e.preventDefault();
       window.location.href = "/halaman-search-gudang";
     });
-  </script>
+  </script> --}}
 </body>
 
 </html>
