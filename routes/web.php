@@ -60,9 +60,8 @@ Route::prefix('staff')->group(function() {
         return view('halaman-search-admin');
     })->name('halaman-search-admin');
     
-    Route::get('/halaman-detail', function () {
-        return view('halaman-detail');
-    });
+    // Route::post('/halaman-tambah-data-container', [])->name('dataContainer');
+    Route::get('/halaman-detail', [AdminController::class, 'showDetail']);
     
     Route::get('/halaman-detail-report', function () {
         return view('/halaman-detail-report');

@@ -68,7 +68,7 @@
                                 </div>
                             </div>
                             <div class="row-data">
-                                <div class="nando">nando</div>
+                                <div class="nando">{{ $detail_customer->Container }}a</div>
                             </div>
                         </div>
                         <div class="data-2">
@@ -80,7 +80,7 @@
                                 </div>
                             </div>
                             <div class="andri-wrapper">
-                                <div class="andri">andri</div>
+                                <div class="andri">{{ $detail_customer->Bill_of_lading }}</div>
                             </div>
                         </div>
                         <div class="data-3">
@@ -92,7 +92,7 @@
                                 </div>
                             </div>
                             <div class="fahri-wrapper">
-                                <div class="fahri">fahri</div>
+                                <div class="fahri">{{ $detail_customer->Consignee }}</div>
                             </div>
                         </div>
                         <div class="data-4">
@@ -104,7 +104,7 @@
                                 </div>
                             </div>
                             <div class="wrapper">
-                                <div class="div">00988</div>
+                                <div class="div">{{ $detail_customer->Quantity }}</div>
                             </div>
                         </div>
                         <div class="data-5">
@@ -116,7 +116,7 @@
                                 </div>
                             </div>
                             <div class="frame">
-                                <div class="div1">21834</div>
+                                <div class="div1">{{ $detail_customer->Volume }}</div>
                             </div>
                         </div>
                         <div class="data-6">
@@ -128,7 +128,7 @@
                                 </div>
                             </div>
                             <div class="wrapper1">
-                                <div class="div2">27/5/2024</div>
+                                <div class="div2">{{ $detail_customer->date }}</div>
                             </div>
                         </div>
                         <div class="data-7">
@@ -140,7 +140,7 @@
                                 </div>
                             </div>
                             <div class="picked-up-wrapper">
-                                <div class="picked-up2">picked up</div>
+                                <div class="picked-up2">{{ $detail_customer->Status }}</div>
                             </div>
                         </div>
                     </div>
