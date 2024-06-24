@@ -8,9 +8,11 @@ use DateTime;
 use Illuminate\Http\Request;
 use App\Models\detailCustomer;
 
-class AdminController extends Controller {
+class AdminController extends Controller
+{
 
-    public function addDataContainer(Request $request) {
+    public function addDataContainer(Request $request)
+    {
         $date = new DateTime('2001-01-01');
         $eta = $date->format('Y-m-d H:i:s');
 
@@ -25,13 +27,15 @@ class AdminController extends Controller {
         return redirect(route('dashboardGudang'));
     }
 
-    public function showDataContainer() {
+    public function showDataContainer()
+    {
         return view('/halaman-search-gudang', [
             'containers' => Container::all()
         ]);
     }
 
-    public function addDataCustomer(Request $request) {
+    public function addDataCustomer(Request $request)
+    {
         $date = new DateTime('2001-01-01');
         $formattedDate = $date->format('Y-m-d H:i:s');
 
@@ -49,10 +53,17 @@ class AdminController extends Controller {
         return redirect(route('dataReport'));
     }
 
-     public function showDetail() {
+    public function showDetail()
+    {
         return view('/halaman-detail', [
             'detail_customer' => detailCustomer::all()->first()
         ]);
     }
 
+    public function showHalamanDetail()
+    {
+        return view('/halaman-search-admin', [
+            'containers' => Container::all()
+        ]);
+    }
 }

@@ -94,6 +94,29 @@
                                     <div class="m1">3000 m³</div>
                                 </div>
                             </div>
+                            <div class="button-detail-parent" id="addNewCustomer">
+                                {{-- LIST Customer --}}
+                                @foreach ($containers as $container)
+                                <button class="button-detail">
+                                    <div class="detail-button-labels">
+                                        <div class="pt-balinusa-mitra-perkasa"> {{ $container->Consignee }} </div>
+                                    </div>
+                                    <div class="detail-button-icons">
+                                        <div class="detail-button-content">
+                                            <div class="item-codes">
+                                                <div class="EGHUA486245">{{ $container->Bill_of_lading }}</div>
+                                                <div class="pos">{{ $container->Total_Pos }} POS</div>
+                                            </div>
+                                            <div class="estimated-arrival">
+                                                <div class="eta-12">ETA : {{ $container->ATA }}</div>
+                                            </div>
+                                        </div>
+                                        <img class="vector-icon2" alt="" src="/images/vector-2.svg" />
+                                    </div>
+                                </button>
+                                @endforeach
+                                {{-- LIST Customer :: END --}}
+                            </div>
                             <img class="vector-icon2" alt="" src="/images/vector-2.svg" />
                         </div>
                     </div>
@@ -114,9 +137,9 @@
         for (let index = 0; index < buttons.length; index++) {
             const element = buttons[index];
             element.addEventListener("click", function(e) {
-                window.location.href ="/halaman-detail"
+                window.location.href = "/halaman-detail"
             })
-            
+
         }
     </script>
 
