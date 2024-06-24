@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
@@ -45,6 +46,8 @@ Route::prefix('admin')->middleware('auth')->group(function() {
     Route::get('/halaman-tambah-data-container', function () {
         return view('/halaman-tambah-data-container');
     })->name('dataContainer');
+
+    Route::post('/halaman-tambah-data-container', [AdminController::class, 'addDataContainer'])->name('dataContainer');
     
     Route::get('/halaman-tambah-data-report', function () {
         return view('/halaman-tambah-data-report');

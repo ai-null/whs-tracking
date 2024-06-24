@@ -107,7 +107,7 @@
     var newItemButton = document.getElementById("newItemButton");
     if (newItemButton) {
       newItemButton.addEventListener("click", function(e) {
-        window.location.href = "/halaman-tambah-data-container";
+        window.location.href = "{{ route('dataContainer') }}";
       });
     }
   </script>

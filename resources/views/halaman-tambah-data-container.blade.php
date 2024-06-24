@@ -46,9 +46,13 @@
         </div>
       </header>
       <section class="halaman-tambah-data-container-inner">
-        <form class="frame-form">
+
+        {{-- FORM SAVE DATA CONTAINER --}}
+        {{-- route('dataContainer') == http://127.0.0.1:8000/admin/halaman-tambah-data-container --}}
+        <form class="frame-form" action="{{ route('dataContainer') }}" method="POST">
+          @csrf
           <div class="frame-parent20">
-            <div class="header-description-group">
+            <div class="header-description-group"></div>
               <div class="header-description1">
                 <div class="header-description-item"></div>
                 <div class="submit-your-information">
@@ -56,20 +60,20 @@
                 </div>
               </div>
               <div class="vessel-wrapper">
-                <input class="vessel" placeholder="Vessel" type="text" />
+                <input class="vessel" placeholder="Vessel" type="text" name="vessel" />
               </div>
             </div>
             <div class="voyage-wrapper">
-              <input class="voyage" placeholder="Voyage" type="text" />
+              <input class="voyage" placeholder="Voyage" type="text" name="voyage" />
             </div>
             <div class="container-wrapper">
-              <input class="container2" placeholder="Container" type="text" />
+              <input class="container2" placeholder="Container" type="text" name="container" />
             </div>
             <div class="ata-wrapper">
-              <input class="ata" placeholder="ATA" type="text" />
+              <input class="ata" placeholder="ETA" type="text" name="eta" />
             </div>
             <div class="total-pos-wrapper">
-              <input class="total-pos" placeholder="Total Pos" type="text" />
+              <input class="total-pos" placeholder="Total Pos" type="text" name="totalPos" />
             </div>
           </div>
           <div class="frame-wrapper7">
@@ -78,13 +82,15 @@
                 <div class="cancel-button-item"></div>
                 <div class="cancel1">Cancel</div>
               </button>
-              <button class="save-button1">
+              <button class="save-button1" type="submit">
                 <div class="save-button-item"></div>
                 <b class="save1">Save</b>
               </button>
             </div>
           </div>
         </form>
+        {{-- FORM SAVE DATA CONTAINER :: END --}}
+
       </section>
     </div>
   </body>
