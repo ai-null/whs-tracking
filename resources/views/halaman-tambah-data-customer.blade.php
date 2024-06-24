@@ -11,6 +11,8 @@
 </head>
 
 <body>
+<form action="{{ route('dataCustomer') }}" method="POST">
+  @csrf
   <div class="halaman-tambah-data-customer">
     <header class="header4">
       <div class="image-9-parent2">
@@ -39,37 +41,32 @@
         </div>
         <div class="frame-wrapper">
           <div class="bill-of-lading-frame">
-            <input class="bill-of-lading1" placeholder="Bill of Lading" type="text" />
+            <input class="bill-of-lading1" placeholder="Bill of Lading" type="text" name="billOfLading" />
           </div>
         </div>
         <div class="frame-wrapper1">
           <div class="consignee-container">
-            <input class="consignee2" placeholder="Consignee" type="text" />
+            <input class="consignee2" placeholder="Consignee" type="text" name="consignee"/>
           </div>
         </div>
         <div class="frame-wrapper2">
           <div class="qty-container">
-            <input class="qty2" placeholder="Qty" type="text" />
+            <input class="qty2" placeholder="Qty" type="text" name="qty"/>
           </div>
         </div>
         <div class="frame-wrapper3">
           <div class="volume-container">
-            <input class="volume2" placeholder="Volume" type="text" />
+            <input class="volume2" placeholder="Volume" type="text" name="volume"/>
           </div>
         </div>
         <div class="frame-wrapper4">
           <div class="date-container">
-            <input class="date2" placeholder="Date" type="text" />
-          </div>
-        </div>
-        <div class="frame-wrapper5">
-          <div class="status-container">
-            <input class="status2" placeholder="Status" type="text" />
+            <input class="date2" placeholder="Date" type="text" name="date"/>
           </div>
         </div>
         <div class="frame-parent15">
           <div class="report-conditions-wrapper">
-            <input class="report-conditions" placeholder="Report Conditions" type="text" />
+            <input class="report-conditions" placeholder="Report Conditions" type="text" name="reportCondition"/>
           </div>
           <div class="upload-photo-button-wrapper">
             <button class="upload-photo-button">
@@ -116,7 +113,7 @@
                 <div class="cancel-button-child"></div>
                 <b class="cancel">Cancel</b>
               </button>
-              <button class="save-button">
+              <button class="save-button" type="submit">
                 <div class="save-button-child"></div>
                 <b class="save">Save</b>
               </button>
@@ -126,6 +123,7 @@
       </div>
     </main>
   </div>
+</form>
 </body>
 
 </html>

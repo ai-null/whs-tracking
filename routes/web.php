@@ -40,6 +40,8 @@ Route::prefix('admin')->middleware('auth')->group(function() {
     Route::get('/halaman-tambah-data-customer', function () {
         return view('/halaman-tambah-data-customer');
     })->name('dataCustomer');
+    Route::post('/halaman-tambah-data-customer', [AdminController::class,
+    'addDataCustomer'])->name('dataCustomer');
 
     Route::get('/halaman-tambah-data-container', function () {
         return view('/halaman-tambah-data-container');

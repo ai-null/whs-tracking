@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Container;
 use DateTime;
 use Illuminate\Http\Request;
+use App\Models\detailCustomer;
 
 class AdminController extends Controller {
 
@@ -28,5 +29,23 @@ class AdminController extends Controller {
         return view('/halaman-search-gudang', [
             'containers' => Container::all()
         ]);
+    }
+
+    public function addDataCustomer(Request $request) {
+        $date = new DateTime('2001-01-01');
+        $formattedDate = $date->format('Y-m-d H:i:s');
+
+        detailCustomer::create([
+            'id_container' => '1',
+            'Bill_of_lading' => $request->billOfLading,
+            'Consignee' => $request->consignee,
+            'Quantity' => $request->qty,
+            'Volume' => $request->volume,
+            'date'  => $formattedDate,
+            'Report_condition' => $request->reportCondition,
+            'Status' => 'progress'
+        ]);
+
+        return redirect(route('dataReport'));
     }
 }
