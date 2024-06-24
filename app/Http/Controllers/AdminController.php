@@ -63,7 +63,7 @@ class AdminController extends Controller
     public function showHalamanDetail()
     {
         return view('/halaman-search-admin', [
-            'containers' => Container::all()
+            'detailCustomers' => detailCustomer::all()
         ]);
     }
 }

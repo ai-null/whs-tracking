@@ -58,7 +58,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
 // ADMIN GATEWAY
 Route::prefix('staff')->group(function () {
-    Route::get('/halaman-search-admin', [AdminController::class, 'showHalamaDetail'])->name('halaman-search-admin');
+    Route::get('/halaman-search-admin', [AdminController::class, 'showHalamanDetail'])->name('halaman-search-admin');
 
     // Route::post('/halaman-tambah-data-container', [])->name('dataContainer');
     Route::get('/halaman-detail', [AdminController::class, 'showDetail']);

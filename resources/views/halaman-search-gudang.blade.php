@@ -51,23 +51,23 @@
         <div class="button-detail-parent" id="addNewCustomer">
           {{-- LIST CONTAINER --}}
           @foreach ($containers as $container)
-            <button class="button-detail">
-              <div class="detail-button-labels">
-                <div class="sinar-siantar-031s"> {{ $container->vessel }} </div>
-              </div>
-              <div class="detail-button-icons">
-                <div class="detail-button-content">
-                  <div class="item-codes">
-                    <div class="eghu4862452">{{ $container->voyage }}</div>
-                    <div class="pos">{{ $container->Total_Pos }} POS</div>
-                  </div>
-                  <div class="estimated-arrival">
-                    <div class="eta-12">ETA : {{ $container->ATA }}</div>
-                  </div>
+          <button class="button-detail">
+            <div class="detail-button-labels">
+              <div class="sinar-siantar-031s"> {{ $container->vessel }} </div>
+            </div>
+            <div class="detail-button-icons">
+              <div class="detail-button-content">
+                <div class="item-codes">
+                  <div class="eghu4862452">{{ $container->voyage }}</div>
+                  <div class="pos">{{ $container->Total_Pos }} POS</div>
                 </div>
-                <img class="vector-icon12" alt="" src="/images/vector-2.svg" />
+                <div class="estimated-arrival">
+                  <div class="eta-12">ETA : {{ $container->ATA }}</div>
+                </div>
               </div>
-            </button>
+              <img class="vector-icon12" alt="" src="/images/vector-2.svg" />
+            </div>
+          </button>
           @endforeach
           {{-- LIST CONTAINER :: END --}}
         </div>
@@ -80,7 +80,7 @@
     for (let index = 0; index < buttons.length; index++) {
       const element = buttons[index];
       element.addEventListener("click", function(e) {
-        window.location.href = "/halaman-tambah-data-customer"
+        window.location.href = "/admin/halaman-tambah-data-customer"
       })
     }
 

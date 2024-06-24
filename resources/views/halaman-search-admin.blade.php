@@ -47,31 +47,7 @@
                             <div class="total-customer">Total Customer : 10</div>
                         </div>
                     </div>
-                    <button class="button-detail">
-                        <div class="frame-parent1">
-                            <div class="pt-balinusa-mitra-perkasa-wrapper">
-                                <div class="pt-balinusa-mitra">PT BALINUSA MITRA PERKASA</div>
-                            </div>
-                            <div class="status-pickup">
-                                <b class="picked-up">PICKED UP</b>
-                            </div>
-                        </div>
-                        <div class="button-detail-inner">
-                            <div class="frame-parent2">
-                                <div class="frame-parent3">
-                                    <div class="eghu486245-parent">
-                                        <div class="eghu486245">EGHU486245</div>
-                                        <div class="pcs">102 Pcs</div>
-                                    </div>
-                                    <div class="csssub23110088102-parent">
-                                        <div class="csssub23110088102">CSSSUB231100881/02</div>
-                                        <div class="m">2.452 m³</div>
-                                    </div>
-                                </div>
-                                <img class="vector-icon1" alt="" src="/images/vector-2.svg" />
-                            </div>
-                        </div>
-                    </button>
+
                 </div>
                 <button class="button-detail-2" id="detailButton">
                     <div class="frame-parent4">
@@ -96,19 +72,21 @@
                             </div>
                             <div class="button-detail-parent" id="addNewCustomer">
                                 {{-- LIST Customer --}}
-                                @foreach ($containers as $container)
+                                @foreach ($detailCustomers as $detailCustomer)
                                 <button class="button-detail">
                                     <div class="detail-button-labels">
-                                        <div class="pt-balinusa-mitra-perkasa"> {{ $container->Consignee }} </div>
+                                        <div class="pt-balinusa-mitra-perkasa"> {{ $detailCustomer->Consignee }} </div>
                                     </div>
                                     <div class="detail-button-icons">
                                         <div class="detail-button-content">
                                             <div class="item-codes">
-                                                <div class="EGHUA486245">{{ $container->Bill_of_lading }}</div>
-                                                <div class="pos">{{ $container->Total_Pos }} POS</div>
+                                                <div class="EGHUA486245">{{ $detailCustomer->Bill_of_lading }}</div>
+                                                <div class="CSSSUB231100881/02">{{ $detailCustomer->vessel }}</div>
+                                                <div class="102">{{ $detailCustomer->Quantity }} </div>
+                                                <div class="2.452">{{ $detailCustomer->Volume }} </div>
                                             </div>
                                             <div class="estimated-arrival">
-                                                <div class="eta-12">ETA : {{ $container->ATA }}</div>
+                                                <div class="eta-12">ETA : {{ $detailCustomer->ATA }}</div>
                                             </div>
                                         </div>
                                         <img class="vector-icon2" alt="" src="/images/vector-2.svg" />
