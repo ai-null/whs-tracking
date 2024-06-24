@@ -10,8 +10,8 @@ use Illuminate\Http\Request;
 class AdminController extends Controller {
 
     public function addDataContainer(Request $request) {
-        $date = new DateTime('2000-01-01');
-        $eta = $date->format('Y-m-d H:i:s');
+        $date = new DateTime('2001-01-01');
+        $eta = $date->format('d MM YYYY H:i:s');
 
         Container::create([
             'vessel' => $request->vessel,
@@ -22,5 +22,11 @@ class AdminController extends Controller {
         ]);
 
         return redirect(route('dashboardGudang'));
+    }
+
+    public function showDataContainer() {
+        return view('/halaman-search-gudang', [
+            'containers' => Container::all()
+        ]);
     }
 }

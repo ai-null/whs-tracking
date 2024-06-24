@@ -49,53 +49,33 @@
           </button>
         </div>
         <div class="button-detail-parent" id="addNewCustomer">
-          <button class="button-detail">
-            <div class="detail-button-labels">
-              <div class="sinar-siantar-031s">SINAR SIANTAR 031S</div>
-            </div>
-            <div class="detail-button-icons">
-              <div class="detail-button-content">
-                <div class="item-codes">
-                  <div class="eghu4862452">EGHU486245</div>
-                  <div class="pos">10 POS</div>
-                </div>
-                <div class="estimated-arrival">
-                  <div class="eta-12">ETA : 12 March 2024</div>
-                </div>
+          {{-- LIST CONTAINER --}}
+          @foreach ($containers as $container)
+            <button class="button-detail">
+              <div class="detail-button-labels">
+                <div class="sinar-siantar-031s"> {{ $container->vessel }} </div>
               </div>
-              <img class="vector-icon12" alt="" src="/images/vector-2.svg" />
-            </div>
-          </button>
-          <button class="button-detail">
-            <div class="kmtc-chennai-025n-parent">
-              <div class="kmtc-chennai-025n">KMTC CHENNAI 025N</div>
-            </div>
-            <div class="frame-parent17">
-              <div class="frame-parent18">
-                <div class="tcku943790-parent">
-                  <div class="tcku943790">TCKU943790</div>
-                  <div class="pos1">10 POS</div>
+              <div class="detail-button-icons">
+                <div class="detail-button-content">
+                  <div class="item-codes">
+                    <div class="eghu4862452">{{ $container->voyage }}</div>
+                    <div class="pos">{{ $container->Total_Pos }} POS</div>
+                  </div>
+                  <div class="estimated-arrival">
+                    <div class="eta-12">ETA : {{ $container->ATA }}</div>
+                  </div>
                 </div>
-                <div class="eta-1-february-2024-wrapper">
-                  <div class="eta-1">ETA : 1 February 2024</div>
-                </div>
+                <img class="vector-icon12" alt="" src="/images/vector-2.svg" />
               </div>
-              <img class="vector-icon13" alt="" src="/images/vector-2.svg" />
-            </div>
-          </button>
+            </button>
+          @endforeach
+          {{-- LIST CONTAINER :: END --}}
         </div>
       </div>
     </section>
   </div>
 
   <script>
-    var newItemButton = document.getElementById("newItemButton");
-    if (newItemButton) {
-      newItemButton.addEventListener("click", function(e) {
-        window.location.href = "";
-      });
-    }
-
     var buttons = document.getElementsByClassName('button-detail')
     for (let index = 0; index < buttons.length; index++) {
       const element = buttons[index];

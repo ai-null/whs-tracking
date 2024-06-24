@@ -35,9 +35,7 @@ Route::prefix('auth')->group(function () {
 
 // ADMIN GUDANG 
 Route::prefix('admin')->middleware('auth')->group(function() {
-    Route::get('/halaman-search-gudang', function () {
-        return view('/halaman-search-gudang');
-    })->name('dashboardGudang');
+    Route::get('/halaman-search-gudang', [AdminController::class, 'showDataContainer'])->name('dashboardGudang');
 
     Route::get('/halaman-tambah-data-customer', function () {
         return view('/halaman-tambah-data-customer');
@@ -46,7 +44,6 @@ Route::prefix('admin')->middleware('auth')->group(function() {
     Route::get('/halaman-tambah-data-container', function () {
         return view('/halaman-tambah-data-container');
     })->name('dataContainer');
-
     Route::post('/halaman-tambah-data-container', [AdminController::class, 'addDataContainer'])->name('dataContainer');
     
     Route::get('/halaman-tambah-data-report', function () {
