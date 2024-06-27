@@ -42,7 +42,7 @@
         var staffLoginButton = document.getElementById("staffLoginButton");
         if (staffLoginButton) {
             staffLoginButton.addEventListener("click", function(e) {
-                window.location.href = "/halaman-search-admin";
+                window.location.href = "{{ route('halaman-search-admin') }}";
             });
         }
     </script>

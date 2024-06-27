@@ -83,7 +83,7 @@
               <div class="nama-file-gambar3">photos1.png</div>
               <img class="gambar-icon3" loading="lazy" alt="" src="/images/gambar1@2x.png" />
 
-              <button class="delete-button">
+              <button type="button" class="delete-button">
                 <div class="delete">Delete</div>
                 <img class="vector-icon8" alt="" src="/images/vector2.svg" />
               </button>
@@ -92,7 +92,7 @@
               <div class="nama-file-gambar4">photos2.png</div>
               <img class="gambar-icon4" alt="" src="/images/gambar1@2x.png" />
 
-              <button class="delete-button1">
+              <button type="button" class="delete-button1">
                 <div class="delete1">Delete</div>
                 <img class="vector-icon9" alt="" src="/images/vector2.svg" />
               </button>
@@ -101,7 +101,7 @@
               <div class="nama-file-gambar5">photos3.png</div>
               <img class="gambar-icon5" alt="" src="/images/gambar1@2x.png" />
 
-              <button class="delete-button2">
+              <button type="button" class="delete-button2">
                 <div class="delete2">Delete</div>
                 <img class="vector-icon10" alt="" src="/images/vector2.svg" />
               </button>
@@ -109,10 +109,10 @@
           </div>
           <div class="frame-wrapper6">
             <div class="cancel-button-parent">
-              <button class="cancel-button">
+              <a href="{{route('dashboardGudang')}}" class="cancel-button">
                 <div class="cancel-button-child"></div>
                 <b class="cancel">Cancel</b>
-              </button>
+              </a>
               <button class="save-button" type="submit">
                 <div class="save-button-child"></div>
                 <b class="save">Save</b>

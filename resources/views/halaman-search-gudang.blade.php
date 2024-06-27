@@ -80,7 +80,7 @@
     for (let index = 0; index < buttons.length; index++) {
       const element = buttons[index];
       element.addEventListener("click", function(e) {
-        window.location.href = "/admin/halaman-tambah-data-customer"
+        window.location.href = "{{ route('dataReport') }}"
       })
     }
 

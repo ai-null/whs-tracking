@@ -38,8 +38,9 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/halaman-search-gudang', [AdminController::class, 'showDataContainer'])->name('dashboardGudang');
 
     Route::get('/halaman-tambah-data-customer', function () {
-        return view('/halaman-tambah-data-customer');
+        return view('halaman-tambah-data-customer');
     })->name('dataCustomer');
+    
     Route::post('/halaman-tambah-data-customer', [
         AdminController::class,
         'addDataCustomer'
