@@ -33,7 +33,7 @@ Route::prefix('auth')->group(function () {
 });
 
 
-// ADMIN GUDANG 
+// ADMIN GUDANG
 Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/halaman-search-gudang', [AdminController::class, 'showDataContainer'])->name('dashboardGudang');
 
@@ -50,9 +50,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     })->name('dataContainer');
     Route::post('/halaman-tambah-data-container', [AdminController::class, 'addDataContainer'])->name('dataContainer');
 
-    Route::get('/halaman-tambah-data-report', function () {
-        return view('/halaman-tambah-data-report');
-    })->name('dataReport');
+    Route::get('/halaman-tambah-data-report', [AdminController::class,'showdatacustomer'])->name('dataReport');
 });
 
 

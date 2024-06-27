@@ -39,29 +39,32 @@
         </div>
         <img class="tombol-tambah-data" loading="lazy" alt="" src="/images/tombol-tambah-data@2x.png" id="tombolTambahData" />
 
-        <div class="customer-detail">
-          <div class="pt-balinusa-mitra-perkasa-parent">
-            <div class="pt-balinusa-mitra-container">
-              <ol class="pt-balinusa-mitra-perkasa">
-                <li>PT BALINUSA MITRA PERKASA</li>
-              </ol>
-            </div>
-            <div class="buttons">
-              <button class="edit-button" id="editButton">
-                <div class="edit-background-parent">
-                  <div class="edit-background"></div>
-                  <img class="edit-icon" alt="" src="/images/vector-13.svg" />
-                </div>
-              </button>
-              <button class="delete-button3">
-                <div class="delete-background-parent">
-                  <div class="delete-background"></div>
-                  <img class="delete-icon" alt="" src="/images/vector-21.svg" />
-                </div>
-              </button>
-            </div>
+      @foreach ( $data as $item)
+      <div class="customer-detail">
+        <div class="pt-balinusa-mitra-perkasa-parent">
+          <div class="pt-balinusa-mitra-container">
+            <ol class="pt-balinusa-mitra-perkasa">
+              <li>{{$item->Consignee}}</li>
+            </ol>
+          </div>
+          <div class="buttons">
+            <button class="edit-button" id="editButton">
+              <div class="edit-background-parent">
+                <div class="edit-background"></div>
+                <img class="edit-icon" alt="" src="/images/vector-13.svg" />
+              </div>
+            </button>
+            <button class="delete-button3">
+              <div class="delete-background-parent">
+                <div class="delete-background"></div>
+                <img class="delete-icon" alt="" src="/images/vector-21.svg" />
+              </div>
+            </button>
           </div>
         </div>
+      </div>
+
+      @endforeach
       </div>
     </section>
     <div class="data-grid">

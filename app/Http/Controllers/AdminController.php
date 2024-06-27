@@ -10,6 +10,13 @@ use App\Models\detailCustomer;
 
 class AdminController extends Controller
 {
+    public function showdatacustomer() {
+        $data=detailCustomer::all();
+        return view('halaman-tambah-data-report',[
+            'data' => $data
+
+        ]);
+    }
 
     public function addDataContainer(Request $request)
     {
