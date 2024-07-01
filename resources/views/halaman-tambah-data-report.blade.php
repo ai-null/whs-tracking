@@ -49,12 +49,12 @@
             </div>
             <div class="buttons">
 
-              <button class="edit-button" id="editButton">
+              <a href=" {{ route('editCustomer', [ 'id' => $item->id ]) }} " class="edit-button" id="editButton">
                 <div class="edit-background-parent">
                   <div class="edit-background"></div>
                   <img class="edit-icon" alt="" src="/images/vector-13.svg" />
                 </div>
-              </button>
+              </a>
               <form action="{{ route('deleteCustomer') }}" method="POST">
                 @csrf
                 <button class="delete-button3">

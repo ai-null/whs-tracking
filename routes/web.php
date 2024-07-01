@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
+use App\Models\detailCustomer;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +42,11 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/halaman-tambah-data-customer', function () {
         return view('halaman-tambah-data-customer');
     })->name('dataCustomer');
+
+    Route::get('/halaman-edit-data-customer/{id}', function (Request $request) {
+        $data = detailCustomer::find($request->id);
+        return view('halaman-edit-data-customer')->with('data', $data);
+    })->name('editCustomer');
 
     Route::post('/halaman-tambah-data-customer', [
         AdminController::class,

@@ -11,6 +11,7 @@
 </head>
 
 <body>
+
   <form action="{{ route('dataCustomer') }}" method="POST">
     @csrf
     <div class="halaman-tambah-data-customer">
@@ -41,32 +42,32 @@
           </div>
           <div class="frame-wrapper">
             <div class="bill-of-lading-frame">
-              <input class="bill-of-lading1" placeholder="Bill of Lading" type="text" name="billOfLading" />
+              <input class="bill-of-lading1" placeholder="Bill of Lading" type="text" name="billOfLading" value="{{ $data->Bill_of_lading }}" />
             </div>
           </div>
           <div class="frame-wrapper1">
             <div class="consignee-container">
-              <input class="consignee2" placeholder="Consignee" type="text" name="consignee" />
+              <input class="consignee2" placeholder="Consignee" type="text" name="consignee" value="{{ $data->Consignee }}" />
             </div>
           </div>
           <div class="frame-wrapper2">
             <div class="qty-container">
-              <input class="qty2" placeholder="Qty" type="text" name="qty" />
+              <input class="qty2" placeholder="Qty" type="text" name="qty" value="{{ $data->Quantity }}" />
             </div>
           </div>
           <div class="frame-wrapper3">
             <div class="volume-container">
-              <input class="volume2" placeholder="Volume" type="text" name="volume" />
+              <input class="volume2" placeholder="Volume" type="text" name="volume" value="{{ $data->Volume }}" />
             </div>
           </div>
           <div class="frame-wrapper4">
             <div class="date-container">
-              <input class="date2" placeholder="Date" type="text" name="date" />
+              <input class="date2" placeholder="Date" type="text" name="date" value="{{ $data->date }}" />
             </div>
           </div>
           <div class="frame-parent15">
             <div class="report-conditions-wrapper">
-              <input class="report-conditions" placeholder="Report Conditions" type="text" name="reportCondition" />
+              <input class="report-conditions" placeholder="Report Conditions" type="text" name="reportCondition" value="{{ $data->Report_condition }}" />
             </div>
             <div class="upload-photo-button-wrapper">
               <button class="upload-photo-button">
