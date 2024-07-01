@@ -10,9 +10,10 @@ use App\Models\detailCustomer;
 
 class AdminController extends Controller
 {
-    public function showdatacustomer() {
-        $data=detailCustomer::all();
-        return view('halaman-tambah-data-report',[
+    public function showdatacustomer()
+    {
+        $data = detailCustomer::all();
+        return view('halaman-tambah-data-report', [
             'data' => $data
 
         ]);
@@ -72,5 +73,11 @@ class AdminController extends Controller
         return view('/halaman-search-admin', [
             'detailCustomers' => detailCustomer::all()
         ]);
+    }
+
+    public function deleteCustomer(Request $request)
+    {
+        $deleted = detailCustomer::where('id', $request->id)->delete();
+        return back();
     }
 }

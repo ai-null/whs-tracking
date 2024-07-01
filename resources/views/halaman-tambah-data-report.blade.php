@@ -39,32 +39,37 @@
         </div>
         <img class="tombol-tambah-data" loading="lazy" alt="" src="/images/tombol-tambah-data@2x.png" id="tombolTambahData" />
 
-      @foreach ( $data as $item)
-      <div class="customer-detail">
-        <div class="pt-balinusa-mitra-perkasa-parent">
-          <div class="pt-balinusa-mitra-container">
-            <ol class="pt-balinusa-mitra-perkasa">
-              <li>{{$item->Consignee}}</li>
-            </ol>
-          </div>
-          <div class="buttons">
-            <button class="edit-button" id="editButton">
-              <div class="edit-background-parent">
-                <div class="edit-background"></div>
-                <img class="edit-icon" alt="" src="/images/vector-13.svg" />
-              </div>
-            </button>
-            <button class="delete-button3">
-              <div class="delete-background-parent">
-                <div class="delete-background"></div>
-                <img class="delete-icon" alt="" src="/images/vector-21.svg" />
-              </div>
-            </button>
+        @foreach ( $data as $item)
+        <div class="customer-detail">
+          <div class="pt-balinusa-mitra-perkasa-parent">
+            <div class="pt-balinusa-mitra-container">
+              <ol class="pt-balinusa-mitra-perkasa">
+                <li>{{$item->Consignee}}</li>
+              </ol>
+            </div>
+            <div class="buttons">
+
+              <button class="edit-button" id="editButton">
+                <div class="edit-background-parent">
+                  <div class="edit-background"></div>
+                  <img class="edit-icon" alt="" src="/images/vector-13.svg" />
+                </div>
+              </button>
+              <form action="{{ route('deleteCustomer') }}" method="POST">
+                @csrf
+                <button class="delete-button3">
+                  <div class="delete-background-parent">
+                    <input type="hidden" name="id" value="{{$item->id}}">
+                    <div class="delete-background"></div>
+                    <img class="delete-icon" alt="" src="/images/vector-21.svg" />
+                  </div>
+                </button>
+              </form>
+            </div>
           </div>
         </div>
-      </div>
 
-      @endforeach
+        @endforeach
       </div>
     </section>
     <div class="data-grid">
