@@ -12,7 +12,7 @@ class AdminController extends Controller
 {
     public function showdatacustomer(Request $request)
     {
-        $data = detailCustomer::all();
+        $data = detailCustomer::where('id_container', $request->id)->get();
         return view('halaman-tambah-data-report', [
             'data' => $data,
             'id' => $request->id,
@@ -48,7 +48,7 @@ class AdminController extends Controller
         $formattedDate = $date->format('Y-m-d H:i:s');
 
         detailCustomer::create([
-            'id_container' => '1',
+            'id_container' => $request->id,
             'Bill_of_lading' => $request->billOfLading,
             'Consignee' => $request->consignee,
             'Quantity' => $request->qty,
@@ -58,7 +58,7 @@ class AdminController extends Controller
             'Status' => 'progress'
         ]);
 
-        return redirect(route('dataReport'));
+        return redirect(route('dataReport', ['id' => $request->id]));
     }
 
     public function showDetail()
