@@ -53,8 +53,8 @@ Route::prefix('admin')->middleware('auth')->group(function () {
         'addDataCustomer'
     ])->name('dataCustomer');
 
-    Route::get('/{id}/halaman-tambah-data-container', function () {
-        return view('/halaman-tambah-data-container');
+    Route::get('/{id}/halaman-tambah-data-container', function (Request $request) {
+        return view('/halaman-tambah-data-container', [ 'id' => $request->id ]);
     })->name('dataContainer');
     Route::post('/{id}/halaman-tambah-data-container', [AdminController::class, 'addDataContainer'])->name('dataContainer');
 

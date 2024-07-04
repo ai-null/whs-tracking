@@ -49,7 +49,7 @@
 
         {{-- FORM SAVE DATA CONTAINER --}}
         {{-- route('dataContainer') == http://127.0.0.1:8000/admin/halaman-tambah-data-container --}}
-        <form class="frame-form" action="{{ route('dataContainer') }}" method="POST">
+        <form class="frame-form" action="{{ route('dataContainer', [ 'id' => $id ]) }}" method="POST">
           @csrf
           <div class="frame-parent20">
             <div class="header-description-group"></div>
