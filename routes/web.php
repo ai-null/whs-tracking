@@ -39,8 +39,8 @@ Route::prefix('auth')->group(function () {
 Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/halaman-search-gudang', [AdminController::class, 'showDataContainer'])->name('dashboardGudang');
 
-    Route::get('/halaman-tambah-data-customer', function () {
-        return view('halaman-tambah-data-customer');
+    Route::get('/{id}/halaman-tambah-data-customer', function (Request $request) {
+        return view('halaman-tambah-data-customer', [ 'id' => $request->id ]);
     })->name('dataCustomer');
 
     Route::get('/{idContainer}/halaman-edit-data-customer/{id}', function (Request $request) {
@@ -48,7 +48,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
         return view('halaman-edit-data-customer')->with('data', $data);
     })->name('editCustomer');
 
-    Route::post('/halaman-tambah-data-customer', [
+    Route::post('/{id}/halaman-tambah-data-customer', [
         AdminController::class,
         'addDataCustomer'
     ])->name('dataCustomer');

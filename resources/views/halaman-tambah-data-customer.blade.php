@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  <form action="{{ route('dataCustomer') }}" method="POST">
+  <form action="{{ route('dataCustomer', [ 'id' => $id ]) }}" method="POST">
     @csrf
     <div class="halaman-tambah-data-customer">
       <header class="header4">
