@@ -115,7 +115,7 @@
         for (let index = 0; index < buttons.length; index++) {
             const element = buttons[index];
             element.addEventListener("click", function(e) {
-                window.location.href = "/halaman-detail"
+                window.location.href = "{{ route('containerDetail') }}";
             })
 
         }

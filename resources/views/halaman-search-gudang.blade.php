@@ -8,6 +8,12 @@
   <link rel="stylesheet" href="/css/halaman-search-gudang.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;600;700&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" />
+
+  <style>
+    a {
+      text-decoration: none;
+    }
+  </style>
 </head>
 
 <body>
@@ -51,7 +57,7 @@
         <div class="button-detail-parent" id="addNewCustomer">
           {{-- LIST CONTAINER --}}
           @foreach ($containers as $container)
-          <button class="button-detail">
+          <a href="{{ route('dataReport', [ 'id' =>  $container->id]) }}" class="button-detail">
             <div class="detail-button-labels">
               <div class="sinar-siantar-031s"> {{ $container->vessel }} </div>
             </div>
@@ -67,7 +73,7 @@
               </div>
               <img class="vector-icon12" alt="" src="/images/vector-2.svg" />
             </div>
-          </button>
+          </a>
           @endforeach
           {{-- LIST CONTAINER :: END --}}
         </div>
@@ -76,18 +82,10 @@
   </div>
 
   <script>
-    var buttons = document.getElementsByClassName('button-detail')
-    for (let index = 0; index < buttons.length; index++) {
-      const element = buttons[index];
-      element.addEventListener("click", function(e) {
-        window.location.href = "{{ route('dataReport') }}"
-      })
-    }
-
     var newItemButton = document.getElementById("newItemButton");
     if (newItemButton) {
       newItemButton.addEventListener("click", function(e) {
-        window.location.href = "{{ route('dataContainer') }}";
+        window.location.href = "{{ route('dataContainer', [ 'id' => '1' ]) }}";
       });
     }
   </script>

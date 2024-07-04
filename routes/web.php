@@ -43,7 +43,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
         return view('halaman-tambah-data-customer');
     })->name('dataCustomer');
 
-    Route::get('/halaman-edit-data-customer/{id}', function (Request $request) {
+    Route::get('/{idContainer}/halaman-edit-data-customer/{id}', function (Request $request) {
         $data = detailCustomer::find($request->id);
         return view('halaman-edit-data-customer')->with('data', $data);
     })->name('editCustomer');
@@ -53,14 +53,14 @@ Route::prefix('admin')->middleware('auth')->group(function () {
         'addDataCustomer'
     ])->name('dataCustomer');
 
-    Route::get('/halaman-tambah-data-container', function () {
+    Route::get('/{id}/halaman-tambah-data-container', function () {
         return view('/halaman-tambah-data-container');
     })->name('dataContainer');
-    Route::post('/halaman-tambah-data-container', [AdminController::class, 'addDataContainer'])->name('dataContainer');
+    Route::post('/{id}/halaman-tambah-data-container', [AdminController::class, 'addDataContainer'])->name('dataContainer');
 
-    Route::get('/halaman-tambah-data-report', [AdminController::class, 'showdatacustomer'])->name('dataReport');
+    Route::get('/{id}/halaman-tambah-data-report', [AdminController::class, 'showdatacustomer'])->name('dataReport');
 
-    Route::post('/halaman-tambah-data-report', [AdminController::class, 'deleteCustomer'])->name('deleteCustomer');
+    Route::post('/{id}/halaman-tambah-data-report', [AdminController::class, 'deleteCustomer'])->name('deleteCustomer');
 });
 
 
@@ -69,7 +69,7 @@ Route::prefix('staff')->group(function () {
     Route::get('/halaman-search-admin', [AdminController::class, 'showHalamanDetail'])->name('halaman-search-admin');
 
     // Route::post('/halaman-tambah-data-container', [])->name('dataContainer');
-    Route::get('/halaman-detail', [AdminController::class, 'showDetail']);
+    Route::get('/halaman-detail', [AdminController::class, 'showDetail'])->name('containerDetail');
 
     Route::get('/halaman-detail-report', function () {
         return view('/halaman-detail-report');

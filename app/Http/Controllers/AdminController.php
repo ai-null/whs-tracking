@@ -10,12 +10,12 @@ use App\Models\detailCustomer;
 
 class AdminController extends Controller
 {
-    public function showdatacustomer()
+    public function showdatacustomer(Request $request)
     {
         $data = detailCustomer::all();
         return view('halaman-tambah-data-report', [
-            'data' => $data
-
+            'data' => $data,
+            'id' => $request->id,
         ]);
     }
 

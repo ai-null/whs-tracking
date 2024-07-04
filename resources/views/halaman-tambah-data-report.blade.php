@@ -39,7 +39,7 @@
         </div>
         <img class="tombol-tambah-data" loading="lazy" alt="" src="/images/tombol-tambah-data@2x.png" id="tombolTambahData" />
 
-        @foreach ( $data as $item)
+        @foreach ($data as $item)
         <div class="customer-detail">
           <div class="pt-balinusa-mitra-perkasa-parent">
             <div class="pt-balinusa-mitra-container">
@@ -49,13 +49,13 @@
             </div>
             <div class="buttons">
 
-              <a href=" {{ route('editCustomer', [ 'id' => $item->id ]) }} " class="edit-button" id="editButton">
+              <a href=" {{ route('editCustomer', [ 'id' => $item->id, 'idContainer' => $id ]) }} " class="edit-button" id="editButton">
                 <div class="edit-background-parent">
                   <div class="edit-background"></div>
                   <img class="edit-icon" alt="" src="/images/vector-13.svg" />
                 </div>
               </a>
-              <form action="{{ route('deleteCustomer') }}" method="POST">
+              <form action="{{ route('deleteCustomer', [ 'id' => $item->id, 'idContainer' => $id ]) }}" method="POST">
                 @csrf
                 <button class="delete-button3">
                   <div class="delete-background-parent">
