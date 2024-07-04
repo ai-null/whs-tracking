@@ -39,16 +39,17 @@
     </header>
     <section class="content1">
       <div class="result-list">
-        <div class="result-item">
-          <input class="search-bar1" type="text" />
-
-          <div class="search-button-wrapper">
-            <button class="search-button1">
+        <div class="result-item" style="justify-content: space-between; align-items: center;">
+          <form action="" style="min-width: 300px; max-width: 100%; flex-wrap: wrap; display: flex; align-items: center;">
+            <input style="padding: 4px 10px; width: 100%;" class="search-bar1" placeholder="Cari nama container" type="text" />
+            <button class="search-button1" style="margin-left: 10px;">
               <div class="search-button-background1"></div>
               <img class="search-icon1" alt="" src="/images/vector-11.svg" />
             </button>
-          </div>
-          <button class="new-item-button" id="newItemButton">
+          </form>
+
+          <div class="search-button-wrapper"></div>
+          <button style="align: right;" class="new-item-button" id="newItemButton">
             <img class="new-icon" alt="" src="/images/new-icon.svg" />
 
             <b class="new">New</b>

@@ -109,8 +109,6 @@
     flex: 1;
     position: relative;
     border-radius: 11.8px;
-    min-width: 300px;
-    max-width: 100%;
 }
 
 .search-bar1:hover {
