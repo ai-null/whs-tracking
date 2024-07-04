@@ -40,9 +40,9 @@
     <section class="content1">
       <div class="result-list">
         <div class="result-item" style="justify-content: space-between; align-items: center;">
-          <form action="" style="min-width: 300px; max-width: 100%; flex-wrap: wrap; display: flex; align-items: center;">
-            <input style="padding: 4px 10px; width: 100%;" class="search-bar1" placeholder="Cari nama container" type="text" />
-            <button class="search-button1" style="margin-left: 10px;">
+          <form action="{{ route('dashboardGudang' ) }}" style="min-width: 300px; max-width: 100%; flex-wrap: wrap; display: flex; align-items: center;">
+            <input style="padding: 4px 10px; width: 100%;" class="search-bar1" name="keyword" placeholder="Cari nama container" type="text" />
+            <button class="search-button1" type="submit" style="margin-left: 10px;">
               <div class="search-button-background1"></div>
               <img class="search-icon1" alt="" src="/images/vector-11.svg" />
             </button>

@@ -35,11 +35,19 @@ class AdminController extends Controller
         return redirect(route('dashboardGudang'));
     }
 
-    public function showDataContainer()
+    public function showDataContainer(Request $request)
     {
-        return view('/halaman-search-gudang', [
-            'containers' => Container::all()
-        ]);
+        $keyword = $request->keyword;
+        if ($keyword != null && $keyword != '') {
+
+            return view('/halaman-search-gudang', [
+                'containers' => Container::where('vessel', 'like', '%' . $keyword . '%')->get()
+            ]);
+        } else {
+            return view('/halaman-search-gudang', [
+                'containers' => Container::all()
+            ]);
+        }
     }
 
     public function addDataCustomer(Request $request)
