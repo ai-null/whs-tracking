@@ -68,7 +68,7 @@
                                 </div>
                             </div>
                             <div class="row-data">
-                                <div class="nando">{{ $detail_customer->Container }}a</div>
+                                <div class="nando">{{ $detail_customer->container }}</div>
                             </div>
                         </div>
                         <div class="data-2">
@@ -156,14 +156,14 @@
         var tombolReportCondition = document.getElementById("tombolReportCondition");
         if (tombolReportCondition) {
             tombolReportCondition.addEventListener("click", function(e) {
-                window.location.href = "/halaman-detail-report";    
+                window.location.href = " {{ route('detailReport', [ 'id' => $id ]) }} ";    
             });
         }
 
         var tombolPhotos = document.getElementById("tombolPhotos");
         if (tombolPhotos) {
             tombolPhotos.addEventListener("click", function(e) {
-                window.location.href = "/halaman-detail-photo";
+                window.location.href = " {{ route('detailPhoto', [ 'id' => $id ]) }} ";    
             });
         }
     </script>

@@ -85,11 +85,10 @@
           </div>
           <textarea
             class="deskripsi-barang"
-            rows="{15}"
-            readonly="{true}"
-            cols="{45}"
-          >
-          </textarea>
+            rows="15"
+            readonly="true"
+            cols="45"
+          >{{ $report }}</textarea>
         </div>
       </section>
     </div>
@@ -98,14 +97,14 @@
       var frameButton = document.getElementById("tomboldetail");
       if (tomboldetail) {
         tomboldetail.addEventListener("click", function (e) {
-          window.location.href = "/halaman-detail";
+          window.location.href = " {{ route('customerDetail', [ 'id' => $id ]) }} ";
         });
       }
       
       var tombolPhotos = document.getElementById("tombolPhotos");
       if (tombolPhotos) {
         tombolPhotos.addEventListener("click", function (e) {
-          window.location.href = "/halaman-detail-photo";
+          window.location.href = " {{ route('detailPhoto', [ 'id' => $id ]) }} ";
         });
       }
       </script>

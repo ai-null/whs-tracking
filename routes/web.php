@@ -73,16 +73,12 @@ Route::prefix('adminGudang')->middleware('auth')->group(function () {
 
 // ADMIN GATEWAY
 Route::prefix('adminGateway')->group(function () {
-    Route::get('/halaman-search-admin', [AdminController::class, 'showHalamanDetail'])->name('halaman-search-admin');
+    Route::get('/halaman-search-admin', [AdminController::class, 'showSearchAdmin'])->name('halaman-search-admin');
 
     // Route::post('/halaman-tambah-data-container', [])->name('dataContainer');
-    Route::get('/halaman-detail', [AdminController::class, 'showDetail'])->name('containerDetail');
+    Route::get('/{id}/halaman-detail', [AdminController::class, 'showDetail'])->name('customerDetail');
 
-    Route::get('/halaman-detail-report', function () {
-        return view('.admin.gateway.halaman-detail-report');
-    })->name('detailReport');
+    Route::get('/{id}/halaman-detail-report', [AdminController::class, 'showReport'])->name('detailReport');
 
-    Route::get('/halaman-detail-photo', function () {
-        return view('.admin.gateway.halaman-detail-photo');
-    })->name('detailPhoto');
+    Route::get('/{id}/halaman-detail-photo', [AdminController::class, 'showPhotos'])->name('detailPhoto');
 });

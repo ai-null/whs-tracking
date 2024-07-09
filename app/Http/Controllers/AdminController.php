@@ -7,9 +7,12 @@ use App\Models\Container;
 use DateTime;
 use Illuminate\Http\Request;
 use App\Models\detailCustomer;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
+
+    // admin gudang
     public function showdatacustomer(Request $request)
     {
         $data = detailCustomer::where('id_container', $request->id)->get();
@@ -69,23 +72,63 @@ class AdminController extends Controller
         return redirect(route('dataReport', ['id' => $request->id]));
     }
 
-    public function showDetail()
-    {
-        return view('.admin.gateway.halaman-detail', [
-            'detail_customer' => detailCustomer::all()->first()
-        ]);
-    }
-
-    public function showHalamanDetail()
-    {
-        return view('.admin.gateway.halaman-search-admin', [
-            'detailCustomers' => detailCustomer::all()
-        ]);
-    }
-
     public function deleteCustomer(Request $request)
     {
-        $deleted = detailCustomer::where('id', $request->id)->delete();
+        detailCustomer::where('id', $request->id)->delete();
         return back();
+    }
+
+
+    // gateway admin
+    public function showDetail(Request $request)
+    {
+        $data = DB::table('detail_customer')
+        ->select('detail_customer.*', 'container.container')
+        ->where('detail_customer.id', '=', $request->id)
+        ->leftJoin('container', 'detail_customer.id_container', '=', 'container.id')
+        ->first();
+    
+        return view('.admin.gateway.halaman-detail', [
+            'detail_customer' => $data,
+            'id' => $request->id
+        ]);
+    }
+
+    public function showReport(Request $request) {
+        $data = DB::table('detail_customer')
+        ->select('detail_customer.*', 'container.container')
+        ->where('detail_customer.id', '=', $request->id)
+        ->leftJoin('container', 'detail_customer.id_container', '=', 'container.id')
+        ->first();
+
+        return view('.admin.gateway.halaman-detail-report', [
+            'report' => $data->Report_condition,
+            'id' => $request->id
+        ]);
+    }
+
+    public function showPhotos(Request $request) {
+        $data = DB::table('detail_customer')
+        ->select('detail_customer.*', 'container.container')
+        ->where('detail_customer.id', '=', $request->id)
+        ->leftJoin('container', 'detail_customer.id_container', '=', 'container.id')
+        ->first();
+
+        return view('.admin.gateway.halaman-detail-photo', [
+            'report' => $data->Report_condition,
+            'id' => $request->id
+        ]);
+    }
+
+    public function showSearchAdmin()
+    {
+        $data = DB::table('detail_customer')
+        ->select('detail_customer.*', 'container.voyage')
+        ->join('container', 'detail_customer.id_container', '=', 'container.id')
+        ->get();
+
+        return view('.admin.gateway.halaman-search-admin', [
+            'detailCustomers' => $data, 
+        ]);
     }
 }

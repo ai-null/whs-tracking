@@ -44,15 +44,17 @@
                             </button>
                         </div>
                         <div class="customer-info">
-                            <div class="total-customer">Total Customer : 10</div>
+                            <div class="total-customer">Total Customer : {{ $detailCustomers->count() }}</div>
                         </div>
                     </div>
 
                 </div>
-                <button class="button-detail-2" id="detailButton">
+
+                @foreach ($detailCustomers as $detailCustomer)
+                <a class="button-detail-2" style="text-decoration: none;" href=" {{ route('customerDetail', ['id' => $detailCustomer->id]) }} ">
                     <div class="frame-parent4">
                         <div class="pt-tjiwi-kimia-wrapper">
-                            <div class="pt-tjiwi-kimia">PT TJIWI KIMIA</div>
+                            <div class="pt-tjiwi-kimia">{{ $detailCustomer->Consignee }}</div>
                         </div>
                         <div class="status-pickup1">
                             <b class="picked-up1">PICKED UP</b>
@@ -62,64 +64,24 @@
                         <div class="frame-parent5">
                             <div class="frame-parent6">
                                 <div class="eghu486245-group">
-                                    <div class="eghu4862451">EGHU486245</div>
-                                    <div class="pcs1">80 Pcs</div>
+                                    <div class="eghu4862451">{{ $detailCustomer->Bill_of_lading }}</div>
+                                    <div class="pcs1">{{ $detailCustomer->Quantity }} Pcs</div>
                                 </div>
                                 <div class="csssub23110088102-group">
-                                    <div class="csssub231100881021">CSSSUB231100881/02</div>
-                                    <div class="m1">3000 m³</div>
+                                    <div class="csssub231100881021">{{ $detailCustomer->voyage }}</div>
+                                    <div class="m1">{{ $detailCustomer->Volume }} m³</div>
                                 </div>
-                            </div>
-                            <div class="button-detail-parent" id="addNewCustomer">
-                                {{-- LIST Customer --}}
-                                @foreach ($detailCustomers as $detailCustomer)
-                                <button class="button-detail">
-                                    <div class="detail-button-labels">
-                                        <div class="pt-balinusa-mitra-perkasa"> {{ $detailCustomer->Consignee }} </div>
-                                    </div>
-                                    <div class="detail-button-icons">
-                                        <div class="detail-button-content">
-                                            <div class="item-codes">
-                                                <div class="EGHUA486245">{{ $detailCustomer->Bill_of_lading }}</div>
-                                                <div class="CSSSUB231100881/02">{{ $detailCustomer->vessel }}</div>
-                                                <div class="102">{{ $detailCustomer->Quantity }} </div>
-                                                <div class="2.452">{{ $detailCustomer->Volume }} </div>
-                                            </div>
-                                            <div class="estimated-arrival">
-                                                <div class="eta-12">ETA : {{ $detailCustomer->ATA }}</div>
-                                            </div>
-                                        </div>
-                                        <img class="vector-icon2" alt="" src="/images/vector-2.svg" />
-                                    </div>
-                                </button>
-                                @endforeach
-                                {{-- LIST Customer :: END --}}
                             </div>
                             <img class="vector-icon2" alt="" src="/images/vector-2.svg" />
                         </div>
                     </div>
-                </button>
+                </a>
+                @endforeach
+
+
             </div>
         </section>
     </div>
-
-    <script>
-        var detailButton = document.getElementById("detailButton");
-        if (detailButton) {
-            detailButton.addEventListener("click", function(e) {
-                window.location.href = "";
-            });
-        }
-
-        var buttons = document.getElementsByClassName('button-detail')
-        for (let index = 0; index < buttons.length; index++) {
-            const element = buttons[index];
-            element.addEventListener("click", function(e) {
-                window.location.href = "{{ route('containerDetail') }}";
-            })
-
-        }
-    </script>
 
 </body>
 
