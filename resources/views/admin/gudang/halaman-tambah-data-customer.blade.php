@@ -87,7 +87,7 @@
             <div class="upload-photo-button-wrapper">
               <label class="upload-photo-button">
                   <div class="upload-photo">Upload Photo</div>
-                  <input type="file" name="photos" multiple
+                  <input type="file" name="photos[]" multiple="multiple"
                   id="photos_upload"
                   class="upload__inputfile"
                       style=" width: .1px; height: .1px; opacity: 0; overflow: hidden; position: absolute; z-index: -1;">
@@ -117,9 +117,9 @@
             </div>
             <div class="frame-wrapper6">
               <div class="cancel-button-parent">
-                <a href="{{route('dashboardGudang')}}" class="cancel-button">
+                <a style="text-decoration: none;" href="{{route('dashboardGudang')}}" class="cancel-button">
                   <div class="cancel-button-child"></div>
-                  <b style="text-decoration: none;" class="cancel">Cancel</b>
+                  <b class="cancel">Cancel</b>
                 </a>
                 <button class="save-button" type="submit">
                   <div class="save-button-child"></div>

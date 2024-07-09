@@ -58,6 +58,15 @@ class AdminController extends Controller
         $date = new DateTime('2001-01-01');
         $formattedDate = $date->format('Y-m-d H:i:s');
 
+        // dd($request->photos);
+
+        foreach ($request->photos as $photo) {
+            // Assuming you have a Photo model and a 'photos' table in your database
+            
+        }
+
+        $file = $request->file('photos');
+
         detailCustomer::create([
             'id_container' => $request->id,
             'Bill_of_lading' => $request->billOfLading,
@@ -68,6 +77,8 @@ class AdminController extends Controller
             'Report_condition' => $request->reportCondition,
             'Status' => 'progress'
         ]);
+
+
 
         return redirect(route('dataReport', ['id' => $request->id]));
     }
