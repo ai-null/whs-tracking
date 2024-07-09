@@ -72,10 +72,10 @@ Route::prefix('adminGateway')->group(function () {
     Route::get('/halaman-detail', [AdminController::class, 'showDetail'])->name('containerDetail');
 
     Route::get('/halaman-detail-report', function () {
-        return view('/halaman-detail-report');
+        return view('.admin.gateway.halaman-detail-report');
     })->name('detailReport');
 
     Route::get('/halaman-detail-photo', function () {
-        return view('/halaman-detail-photo');
+        return view('.admin.gateway.halaman-detail-photo');
     })->name('detailPhoto');
 });

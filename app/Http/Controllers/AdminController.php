@@ -71,14 +71,14 @@ class AdminController extends Controller
 
     public function showDetail()
     {
-        return view('/halaman-detail', [
+        return view('.admin.gateway.halaman-detail', [
             'detail_customer' => detailCustomer::all()->first()
         ]);
     }
 
     public function showHalamanDetail()
     {
-        return view('/halaman-search-admin', [
+        return view('.admin.gateway.halaman-search-admin', [
             'detailCustomers' => detailCustomer::all()
         ]);
     }
