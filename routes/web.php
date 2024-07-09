@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Models\detailCustomer;
+use App\Models\Photo;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 
@@ -50,8 +51,12 @@ Route::prefix('adminGudang')->middleware('auth')->group(function () {
 
     Route::get('/{idContainer}/halaman-edit-data-customer/{id}', function (Request $request) {
         $data = detailCustomer::find($request->id);
+
+        $photos = Photo::where('id_customer', '=', $request->id)->get();
+
         return view('admin.gudang.halaman-edit-data-customer', [
             'id' => $request->id,
+            'photos' =>  $photos,
         ])->with('data', $data);
     })->name('editCustomer');
 

@@ -7,7 +7,10 @@ use App\Models\Container;
 use DateTime;
 use Illuminate\Http\Request;
 use App\Models\detailCustomer;
+use App\Models\Photo;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
+
 
 class AdminController extends Controller
 {
@@ -58,16 +61,9 @@ class AdminController extends Controller
         $date = new DateTime('2001-01-01');
         $formattedDate = $date->format('Y-m-d H:i:s');
 
-        // dd($request->photos);
+        $files = $request->file('photos');
 
-        foreach ($request->photos as $photo) {
-            // Assuming you have a Photo model and a 'photos' table in your database
-            
-        }
-
-        $file = $request->file('photos');
-
-        detailCustomer::create([
+        $detailCustomer = detailCustomer::create([
             'id_container' => $request->id,
             'Bill_of_lading' => $request->billOfLading,
             'Consignee' => $request->consignee,
@@ -79,6 +75,16 @@ class AdminController extends Controller
         ]);
 
 
+        foreach ($files as $file) {
+            $fileName = time() . '_' . $file->getClientOriginalName();
+            $filePath = $file->storeAs('uploads', $fileName);
+
+            Photo::create([
+                'file_name' => $fileName,
+                'file_path' => $filePath,
+                'id_customer' => $detailCustomer->id,
+            ]);
+        }
 
         return redirect(route('dataReport', ['id' => $request->id]));
     }
