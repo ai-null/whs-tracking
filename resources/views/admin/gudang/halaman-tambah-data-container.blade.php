@@ -32,16 +32,15 @@
         <div class="header-inner3">
           <div class="frame-parent19">
             <div class="selamat-datang-admin-wrapper3">
-              <div class="selamat-datang-admin6">Selamat datang, Admin!</div>
+              <div class="selamat-datang-admin6">Selamat datang, {{ Auth::user()->email }}!</div>
             </div>
-            <button class="tombol-logout1">
-              <img
-                class="logout-icon2"
-                loading="lazy"
-                alt=""
-                src="/images/vector.svg"
-              />
-            </button>
+
+            <form action="{{ route('logout') }}" method="POST">
+              @csrf
+              <button class="tombol-logout1" style="background: none; border: none; cursor: pointer;" type="submit">
+                <img class="vector-icon2" loading="lazy" alt="" src="/images/vector.svg" />
+              </button>
+            </form>
           </div>
         </div>
       </header>

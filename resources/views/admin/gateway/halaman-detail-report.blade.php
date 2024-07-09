@@ -34,7 +34,7 @@
             <div class="selamat-datang-admin-wrapper">
               <div class="selamat-datang-admin">Selamat datang, Admin!</div>
             </div>
-            <a class="logout-button">
+            <a class="logout-button" href="{{ route('login') }}">
               <img
                 class="vector-icon"
                 loading="lazy"

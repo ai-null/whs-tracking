@@ -25,7 +25,7 @@
                     <div class="selamat-datang-admin-container">
                         <div class="selamat-datang-admin1">Selamat datang, Admin!</div>
                     </div>
-                    <a class="logout-button1" id="logoutButton">
+                    <a class="logout-button1" id="logoutButton" href="{{ route('login') }}">
                         <img class="logout-icon" loading="lazy" alt="" src="/images/vector.svg" />
                     </a>
                 </div>

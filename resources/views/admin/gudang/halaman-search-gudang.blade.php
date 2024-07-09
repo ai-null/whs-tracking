@@ -29,11 +29,20 @@
       <div class="header-inner2">
         <div class="frame-parent16">
           <div class="selamat-datang-admin-wrapper2">
-            <div class="selamat-datang-admin5">Selamat datang, Admin!</div>
+            <div class="selamat-datang-admin5">Selamat datang, {{ Auth::user()->email }}!</div>
           </div>
-          <a class="logout-button4">
-            <img class="vector-icon11" alt="" src="/images/vector.svg" />
-          </a>
+
+          <form action="{{ route('logout') }}" method="POST">
+            @csrf
+            <button style="background: none; border: none; cursor: pointer;" type="submit" class="logout-button4">
+              <img
+                class="vector-icon1"
+                loading="lazy"
+                alt=""
+                src="/images/vector.svg"
+              />
+            </button>
+          </form>
         </div>
       </div>
     </header>

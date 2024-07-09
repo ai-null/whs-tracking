@@ -34,7 +34,7 @@
             <div class="selamat-datang-admin-frame">
               <div class="selamat-datang-admin3">Selamat datang, Admin!</div>
             </div>
-            <a class="logout-button3">
+            <a class="logout-button3" href="{{ route('login') }}">
               <img
                 class="vector-icon4"
                 loading="lazy"

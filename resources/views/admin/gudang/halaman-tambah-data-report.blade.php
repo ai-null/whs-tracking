@@ -23,11 +23,15 @@
       <div class="top-navigation">
         <div class="user-actions">
           <div class="selamat-datang-admin-wrapper4">
-            <div class="selamat-datang-admin7">Selamat datang, Admin!</div>
+            <div class="selamat-datang-admin7">selamat datang, {{ Auth::user()->email }}!</div>
           </div>
-          <a class="tombol-logout2">
-            <img class="logout-icon3" loading="lazy" alt="" src="/images/vector.svg" />
-          </a>
+
+          <form action="{{ route('logout') }}" method="POST">
+            @csrf
+            <button class="tombol-logout2" style="background: none; border: none; cursor: pointer;" type="submit">
+              <img class="vector-icon3" loading="lazy" alt="" src="/images/vector.svg" />
+            </button>
+          </form>
         </div>
       </div>
     </header>

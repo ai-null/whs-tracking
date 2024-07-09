@@ -25,9 +25,9 @@
                     <div class="header-title">
                         <div class="selamat-datang-admin2">Selamat datang, Admin!</div>
                     </div>
-                    <div class="logout-button2">
+                    <a class="logout-button2" href="{{ route('login') }}">
                         <img class="logout-icon1" loading="lazy" alt="" src="/images/vector.svg" />
-                    </div>
+                    </a>
                 </div>
             </div>
         </header>

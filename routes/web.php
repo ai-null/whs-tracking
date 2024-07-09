@@ -32,6 +32,11 @@ Route::prefix('auth')->group(function () {
     Route::get('/register', function () {
         return view('admin.gudang.register');
     })->name('register');
+
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
+    Route::get('/logout', function () {
+        abort(403);
+    });
 });
 
 
