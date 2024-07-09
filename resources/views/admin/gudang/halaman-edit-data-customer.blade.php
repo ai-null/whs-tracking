@@ -114,7 +114,7 @@
             </div>
             <div class="frame-wrapper6">
               <div class="cancel-button-parent">
-                <a href="{{route('dashboardGudang')}}" class="cancel-button">
+                <a href="{{route('dashboardGudang')}}" style="text-decoration: none;" class="cancel-button">
                   <div class="cancel-button-child"></div>
                   <b class="cancel">Cancel</b>
                 </a>
