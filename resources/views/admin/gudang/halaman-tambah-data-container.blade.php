@@ -77,7 +77,7 @@
           </div>
           <div class="frame-wrapper7">
             <div class="cancel-button-group">
-              <button class="cancel-button1">
+              <button type="button" id="buttonCancel" class="cancel-button1">
                 <div class="cancel-button-item"></div>
                 <div class="cancel1">Cancel</div>
               </button>
@@ -92,5 +92,12 @@
 
       </section>
     </div>
+
+    <script>
+      document.getElementById('buttonCancel').addEventListener('click', function () {
+        window.location.href = ' {{ route('dashboardGudang') }} '
+      })
+    </script>
+
   </body>
 </html>

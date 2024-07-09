@@ -12,7 +12,7 @@
 
 <body>
 
-  <form action="{{ route('dataCustomer') }}" method="POST">
+  <form action="{{ route('dataCustomer', ['id' => $id]) }}" method="POST">
     @csrf
     <div class="halaman-tambah-data-customer">
       <header class="header4">
@@ -26,10 +26,7 @@
         <div class="header-inner1">
           <div class="frame-parent14">
             <div class="selamat-datang-admin-wrapper1">
-              <form action="{{ route('logout') }}" method="POST">
-                @csrf
-                <button type="submit" class="selamat-datang-admin4">selamat datang, {{ Auth::user()->email }}!</button>
-              </form>
+              <div class="selamat-datang-admin4">selamat datang, {{ Auth::user()->email }}!</div>
             </div>
 
             <form action="{{ route('logout') }}" method="POST">

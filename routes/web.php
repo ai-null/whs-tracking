@@ -50,7 +50,9 @@ Route::prefix('adminGudang')->middleware('auth')->group(function () {
 
     Route::get('/{idContainer}/halaman-edit-data-customer/{id}', function (Request $request) {
         $data = detailCustomer::find($request->id);
-        return view('admin.gudang.halaman-edit-data-customer')->with('data', $data);
+        return view('admin.gudang.halaman-edit-data-customer', [
+            'id' => $request->id,
+        ])->with('data', $data);
     })->name('editCustomer');
 
     Route::post('/{id}/halaman-tambah-data-customer', [

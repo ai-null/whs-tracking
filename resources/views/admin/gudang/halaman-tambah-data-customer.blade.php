@@ -25,10 +25,7 @@
         <div class="header-inner1">
           <div class="frame-parent14">
             <div class="selamat-datang-admin-wrapper1">
-              <form action="{{ route('logout') }}" method="POST">
-                @csrf
-                <button type="submit" class="selamat-datang-admin4">selamat datang, {{ Auth::user()->email }}!</button>
-              </form>
+              <div type="submit" class="selamat-datang-admin4">selamat datang, {{ Auth::user()->email }}!</div>
             </div>
 
             <form action="{{ route('logout') }}" method="POST">
@@ -58,12 +55,12 @@
           </div>
           <div class="frame-wrapper2">
             <div class="qty-container">
-              <input class="qty2" placeholder="Qty" type="text" name="qty" />
+              <input class="qty2" placeholder="Qty" type="number" name="qty" />
             </div>
           </div>
           <div class="frame-wrapper3">
             <div class="volume-container">
-              <input class="volume2" placeholder="Volume" type="text" name="volume" />
+              <input class="volume2" placeholder="Volume" type="number" name="volume" />
             </div>
           </div>
           <div class="frame-wrapper4">
