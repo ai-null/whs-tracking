@@ -13,7 +13,7 @@ class AdminController extends Controller
     public function showdatacustomer(Request $request)
     {
         $data = detailCustomer::where('id_container', $request->id)->get();
-        return view('halaman-tambah-data-report', [
+        return view('admin.gudang.halaman-tambah-data-report', [
             'data' => $data,
             'id' => $request->id,
         ]);
@@ -40,11 +40,11 @@ class AdminController extends Controller
         $keyword = $request->keyword;
         if ($keyword != null && $keyword != '') {
 
-            return view('/halaman-search-gudang', [
+            return view('admin.gudang.halaman-search-gudang', [
                 'containers' => Container::where('vessel', 'like', '%' . $keyword . '%')->get()
             ]);
         } else {
-            return view('/halaman-search-gudang', [
+            return view('admin.gudang.halaman-search-gudang', [
                 'containers' => Container::all()
             ]);
         }

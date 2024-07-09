@@ -25,27 +25,27 @@ Route::get('/', function () {
 Route::prefix('auth')->group(function () {
     Route::post('/login', [AuthController::class, 'login'])->name('login');
     Route::get('/login', function () {
-        return view('login');
+        return view('admin.gudang.login');
     })->name('login');
 
     Route::post('/register', [AuthController::class, 'register'])->name('register');
     Route::get('/register', function () {
-        return view('register');
+        return view('admin.gudang.register');
     })->name('register');
 });
 
 
 // ADMIN GUDANG
-Route::prefix('admin')->middleware('auth')->group(function () {
+Route::prefix('adminGudang')->middleware('auth')->group(function () {
     Route::get('/halaman-search-gudang', [AdminController::class, 'showDataContainer'])->name('dashboardGudang');
 
     Route::get('/{id}/halaman-tambah-data-customer', function (Request $request) {
-        return view('halaman-tambah-data-customer', [ 'id' => $request->id ]);
+        return view('admin.gudang.halaman-tambah-data-customer', [ 'id' => $request->id ]);
     })->name('dataCustomer');
 
     Route::get('/{idContainer}/halaman-edit-data-customer/{id}', function (Request $request) {
         $data = detailCustomer::find($request->id);
-        return view('halaman-edit-data-customer')->with('data', $data);
+        return view('admin.gudang.halaman-edit-data-customer')->with('data', $data);
     })->name('editCustomer');
 
     Route::post('/{id}/halaman-tambah-data-customer', [
@@ -54,7 +54,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     ])->name('dataCustomer');
 
     Route::get('/{id}/halaman-tambah-data-container', function (Request $request) {
-        return view('/halaman-tambah-data-container', [ 'id' => $request->id ]);
+        return view('admin.gudang.halaman-tambah-data-container', [ 'id' => $request->id ]);
     })->name('dataContainer');
     Route::post('/{id}/halaman-tambah-data-container', [AdminController::class, 'addDataContainer'])->name('dataContainer');
 
@@ -65,7 +65,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
 
 // ADMIN GATEWAY
-Route::prefix('staff')->group(function () {
+Route::prefix('adminGateway')->group(function () {
     Route::get('/halaman-search-admin', [AdminController::class, 'showHalamanDetail'])->name('halaman-search-admin');
 
     // Route::post('/halaman-tambah-data-container', [])->name('dataContainer');
