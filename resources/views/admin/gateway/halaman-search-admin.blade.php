@@ -35,14 +35,16 @@
             <div class="search-and-info">
                 <div class="search-area-parent">
                     <div class="search-area">
-                        <div class="search-bar-parent">
-                            <input class="search-bar" type="text" />
+                        <form action="{{ route('halaman-search-admin') }}" method="GET">
+                            <div class="search-bar-parent">
+                                <input style="padding: 4px 16px" class="search-bar" type="text" name="keyword" />
 
-                            <button class="search-button">
-                                <div class="search-button-background"></div>
-                                <img class="search-icon" alt="" src="/images/vector-11.svg" />
-                            </button>
-                        </div>
+                                <button type="submit" class="search-button">
+                                    <div class="search-button-background"></div>
+                                    <img class="search-icon" alt="" src="/images/vector-11.svg" />
+                                </button>
+                            </div>
+                        </form>
                         <div class="customer-info">
                             <div class="total-customer">Total Customer : {{ $detailCustomers->count() }}</div>
                         </div>
@@ -51,31 +53,32 @@
                 </div>
 
                 @foreach ($detailCustomers as $detailCustomer)
-                <a class="button-detail-2" style="text-decoration: none;" href=" {{ route('customerDetail', ['id' => $detailCustomer->id]) }} ">
-                    <div class="frame-parent4">
-                        <div class="pt-tjiwi-kimia-wrapper">
-                            <div class="pt-tjiwi-kimia">{{ $detailCustomer->Consignee }}</div>
-                        </div>
-                        <div class="status-pickup1">
-                            <b class="picked-up1">PICKED UP</b>
-                        </div>
-                    </div>
-                    <div class="button-detail-2-inner">
-                        <div class="frame-parent5">
-                            <div class="frame-parent6">
-                                <div class="eghu486245-group">
-                                    <div class="eghu4862451">{{ $detailCustomer->Bill_of_lading }}</div>
-                                    <div class="pcs1">{{ $detailCustomer->Quantity }} Pcs</div>
-                                </div>
-                                <div class="csssub23110088102-group">
-                                    <div class="csssub231100881021">{{ $detailCustomer->voyage }}</div>
-                                    <div class="m1">{{ $detailCustomer->Volume }} m³</div>
-                                </div>
+                    <a class="button-detail-2" style="text-decoration: none;"
+                        href=" {{ route('customerDetail', ['id' => $detailCustomer->id]) }} ">
+                        <div class="frame-parent4">
+                            <div class="pt-tjiwi-kimia-wrapper">
+                                <div class="pt-tjiwi-kimia">{{ $detailCustomer->Consignee }}</div>
                             </div>
-                            <img class="vector-icon2" alt="" src="/images/vector-2.svg" />
+                            <div class="status-pickup1">
+                                <b class="picked-up1">PICKED UP</b>
+                            </div>
                         </div>
-                    </div>
-                </a>
+                        <div class="button-detail-2-inner">
+                            <div class="frame-parent5">
+                                <div class="frame-parent6">
+                                    <div class="eghu486245-group">
+                                        <div class="eghu4862451">{{ $detailCustomer->Bill_of_lading }}</div>
+                                        <div class="pcs1">{{ $detailCustomer->Quantity }} Pcs</div>
+                                    </div>
+                                    <div class="csssub23110088102-group">
+                                        <div class="csssub231100881021">{{ $detailCustomer->voyage }}</div>
+                                        <div class="m1">{{ $detailCustomer->Volume }} m³</div>
+                                    </div>
+                                </div>
+                                <img class="vector-icon2" alt="" src="/images/vector-2.svg" />
+                            </div>
+                        </div>
+                    </a>
                 @endforeach
 
 

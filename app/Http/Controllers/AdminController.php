@@ -83,23 +83,24 @@ class AdminController extends Controller
     public function showDetail(Request $request)
     {
         $data = DB::table('detail_customer')
-        ->select('detail_customer.*', 'container.container')
-        ->where('detail_customer.id', '=', $request->id)
-        ->leftJoin('container', 'detail_customer.id_container', '=', 'container.id')
-        ->first();
-    
+            ->select('detail_customer.*', 'container.container')
+            ->where('detail_customer.id', '=', $request->id)
+            ->leftJoin('container', 'detail_customer.id_container', '=', 'container.id')
+            ->first();
+
         return view('.admin.gateway.halaman-detail', [
             'detail_customer' => $data,
             'id' => $request->id
         ]);
     }
 
-    public function showReport(Request $request) {
+    public function showReport(Request $request)
+    {
         $data = DB::table('detail_customer')
-        ->select('detail_customer.*', 'container.container')
-        ->where('detail_customer.id', '=', $request->id)
-        ->leftJoin('container', 'detail_customer.id_container', '=', 'container.id')
-        ->first();
+            ->select('detail_customer.*', 'container.container')
+            ->where('detail_customer.id', '=', $request->id)
+            ->leftJoin('container', 'detail_customer.id_container', '=', 'container.id')
+            ->first();
 
         return view('.admin.gateway.halaman-detail-report', [
             'report' => $data->Report_condition,
@@ -107,12 +108,13 @@ class AdminController extends Controller
         ]);
     }
 
-    public function showPhotos(Request $request) {
+    public function showPhotos(Request $request)
+    {
         $data = DB::table('detail_customer')
-        ->select('detail_customer.*', 'container.container')
-        ->where('detail_customer.id', '=', $request->id)
-        ->leftJoin('container', 'detail_customer.id_container', '=', 'container.id')
-        ->first();
+            ->select('detail_customer.*', 'container.container')
+            ->where('detail_customer.id', '=', $request->id)
+            ->leftJoin('container', 'detail_customer.id_container', '=', 'container.id')
+            ->first();
 
         return view('.admin.gateway.halaman-detail-photo', [
             'report' => $data->Report_condition,
@@ -120,15 +122,28 @@ class AdminController extends Controller
         ]);
     }
 
-    public function showSearchAdmin()
+    public function showSearchAdmin(Request $request)
     {
-        $data = DB::table('detail_customer')
-        ->select('detail_customer.*', 'container.voyage')
-        ->join('container', 'detail_customer.id_container', '=', 'container.id')
-        ->get();
+        $keyword = $request->keyword;
+        if ($keyword != null && $keyword != '') {
+            $data = DB::table('detail_customer')
+                ->select('detail_customer.*', 'container.voyage')
+                ->where('detail_customer.Consignee', 'like', '%' . $keyword . '%')
+                ->join('container', 'detail_customer.id_container', '=', 'container.id')
+                ->get();
 
-        return view('.admin.gateway.halaman-search-admin', [
-            'detailCustomers' => $data, 
-        ]);
+            return view('.admin.gateway.halaman-search-admin', [
+                'detailCustomers' => $data
+            ]);
+        } else {
+            $data = DB::table('detail_customer')
+                ->select('detail_customer.*', 'container.voyage')
+                ->join('container', 'detail_customer.id_container', '=', 'container.id')
+                ->get();
+
+            return view('.admin.gateway.halaman-search-admin', [
+                'detailCustomers' => $data
+            ]);
+        }
     }
 }
