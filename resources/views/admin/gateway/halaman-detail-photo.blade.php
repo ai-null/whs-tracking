@@ -78,9 +78,10 @@
           <div class="detail5">Detail</div>
         </div>
         <div class="gallery">
+          @foreach ($photos as $photo)
           <button class="photos-1">
-            <div class="nama-file-gambar">photos1.png</div>
-            <img class="photos-1-child" alt="" src="/images/frame-22.svg" />
+            <div class="nama-file-gambar">{{ $photo->file_name }}</div>
+            <img class="photos-1-child" alt="" src="{{ $photo->file_path }}" />
 
             <img
               class="gambar-icon"
@@ -89,18 +90,7 @@
               src="/images/gambar@2x.png"
             />
           </button>
-          <button class="photos-2">
-            <div class="nama-file-gambar1">photos2.png</div>
-            <img class="photos-2-child" alt="" src="/images/frame-22.svg" />
-
-            <img class="gambar-icon1" alt="" src="/images/gambar@2x.png" />
-          </button>
-          <button class="photos-3">
-            <div class="nama-file-gambar2">photos3.png</div>
-            <img class="photos-3-child" alt="" src="/images/frame-22.svg" />
-
-            <img class="gambar-icon2" alt="" src="/images/gambar@2x.png" />
-          </button>
+          @endforeach
         </div>
       </section>
       <div class="halaman-detail-photo-inner">

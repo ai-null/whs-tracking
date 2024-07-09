@@ -56,8 +56,43 @@ Route::prefix('adminGudang')->middleware('auth')->group(function () {
 
         return view('admin.gudang.halaman-edit-data-customer', [
             'id' => $request->id,
+            'idContainer' => $request->idContainer,
             'photos' =>  $photos,
         ])->with('data', $data);
+    })->name('editCustomer');
+
+    Route::post('/{idContainer}/halaman-edit-data-customer/{id}', function (Request $request) {
+        $date = new DateTime('2001-01-01');
+        $formattedDate = $date->format('Y-m-d H:i:s');
+
+        $files = $request->file('photos');
+
+        $detailCustomer = detailCustomer::create([
+            'id_container' => $request->id,
+            'Bill_of_lading' => $request->billOfLading,
+            'Consignee' => $request->consignee,
+            'Quantity' => $request->qty,
+            'Volume' => $request->volume,
+            'date'  => $formattedDate,
+            'Report_condition' => $request->reportCondition,
+            'Status' => 'progress'
+        ]);
+
+
+        if ($files != null) {
+            foreach ($files as $file) {
+                $fileName = time() . '_' . $file->getClientOriginalName();
+                $filePath = $file->storeAs('uploads', $fileName);
+    
+                Photo::create([
+                    'file_name' => $fileName,
+                    'file_path' => $filePath,
+                    'id_customer' => $detailCustomer->id,
+                ]);
+            }
+        }
+
+        return redirect(route('dataReport', ['id' => $request->id]));
     })->name('editCustomer');
 
     Route::post('/{id}/halaman-tambah-data-customer', [

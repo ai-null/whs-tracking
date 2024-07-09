@@ -133,9 +133,12 @@ class AdminController extends Controller
             ->leftJoin('container', 'detail_customer.id_container', '=', 'container.id')
             ->first();
 
+            $photos = Photo::where('id_customer', '=', $request->id)->get();
+
         return view('.admin.gateway.halaman-detail-photo', [
             'report' => $data->Report_condition,
-            'id' => $request->id
+            'id' => $request->id,
+            'photos' => $photos,
         ]);
     }
 
