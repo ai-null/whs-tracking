@@ -14,8 +14,9 @@
     <div class="halaman-detail">
         <header class="header2">
             <div class="image-9-container">
-                <img class="image-9-icon2" loading="lazy" alt="" src="/images/image-9@2x.png" />
-
+                <a href="{{ route('halaman-search-admin') }}">
+                    <img class="image-9-icon2" loading="lazy" alt="" src="/images/image-9@2x.png" />
+                </a>
                 <div class="header-text-frame">
                     <b class="header-text2">Detail Tracking</b>
                 </div>

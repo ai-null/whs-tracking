@@ -18,12 +18,14 @@
     <div class="halaman-detail-report">
       <section class="header">
         <div class="image-9-parent">
-          <img
-            class="image-9-icon"
-            loading="lazy"
-            alt=""
-            src="/images/image-9@2x.png"
-          />
+          <a href="{{ route('halaman-search-admin') }}">
+            <img
+              class="image-9-icon"
+              loading="lazy"
+              alt=""
+              src="/images/image-9@2x.png"
+            />
+          </a>
 
           <div class="header-text-wrapper">
             <a class="header-text">Detail Tracking</a>
