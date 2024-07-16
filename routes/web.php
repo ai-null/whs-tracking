@@ -127,4 +127,6 @@ Route::prefix('adminGateway')->group(function () {
     Route::get('/{id}/halaman-detail-report', [AdminController::class, 'showReport'])->name('detailReport');
 
     Route::get('/{id}/halaman-detail-photo', [AdminController::class, 'showPhotos'])->name('detailPhoto');
+
+    Route::get('/{id}/halaman-detail-photo/image/download', [AdminController::class, 'imageDownload'])->name('imageDownload');
 });

@@ -81,17 +81,21 @@
         </div>
         <div class="gallery">
           @foreach ($photos as $photo)
-          <button class="photos-1">
+          <a class="photos-1" href="{{ route('imageDownload', [
+            'id' => $id,
+            'filePath' => $photo->file_path,
+            'fileName' => $photo->file_name
+            ]) }}">
             <div class="nama-file-gambar">{{ $photo->file_name }}</div>
-            <img class="photos-1-child" alt="" src="{{ $photo->file_path }}" />
+            <img class="photos-1-child" alt="" src="/images/frame-22.svg" />
 
             <img
               class="gambar-icon"
               loading="lazy"
               alt=""
-              src="/images/gambar@2x.png"
+              src="/{{ $photo->file_path }}"
             />
-          </button>
+          </a>
           @endforeach
         </div>
       </section>

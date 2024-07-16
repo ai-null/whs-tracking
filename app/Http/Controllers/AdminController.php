@@ -9,7 +9,6 @@ use Illuminate\Http\Request;
 use App\Models\detailCustomer;
 use App\Models\Photo;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Storage;
 
 
 class AdminController extends Controller
@@ -142,6 +141,16 @@ class AdminController extends Controller
             'id' => $request->id,
             'photos' => $photos,
         ]);
+    }
+
+    public function imageDownload(Request $request) {
+        $filePath = public_path($request->filePath);
+
+        if (file_exists($filePath)) {
+            return response()->download($filePath);
+        } else {
+            abort(404, 'File not found');
+        }
     }
 
     public function showSearchAdmin(Request $request)
