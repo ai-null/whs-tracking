@@ -20,7 +20,7 @@
     <div class="halaman-tambah-data-customer">
         <header class="header4">
             <div class="image-9-parent2">
-                <img class="image-9-icon4" loading="lazy" alt="" src="/images/image-91@2x.png" />
+                <a href="{{ route('dashboardGudang') }}"><img class="image-9-icon4" loading="lazy" alt="" src="/images/image-91@2x.png" /></a>
 
                 <div class="header-text-wrapper2">
                     <b class="header-text4">Detail Tracking</b>
@@ -109,7 +109,7 @@
                         </div>
                         <div class="frame-wrapper6">
                             <div class="cancel-button-parent">
-                                <a href="{{ route('dashboardGudang') }}" style="text-decoration: none;"
+                                <a href="{{ route('dataReport', [ 'id' => $data->id_container ]) }}" style="text-decoration: none;"
                                     class="cancel-button">
                                     <div class="cancel-button-child"></div>
                                     <b class="cancel">Cancel</b>

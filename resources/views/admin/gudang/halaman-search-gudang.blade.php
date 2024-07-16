@@ -20,7 +20,7 @@
   <div class="halaman-search-gudang">
     <header class="header5">
       <div class="image-9-parent3">
-        <img class="image-9-icon5" alt="" src="/images/image-9@2x.png" />
+        <a href="{{ route('dashboardGudang') }}"><img class="image-9-icon5" alt="" src="/images/image-9@2x.png" /></a>
 
         <div class="header-text-wrapper3">
           <b class="header-text5">Detail Tracking</b>
@@ -50,7 +50,7 @@
       <div class="result-list">
         <div class="result-item" style="justify-content: space-between; align-items: center;">
           <form action="{{ route('dashboardGudang' ) }}" style="min-width: 300px; max-width: 100%; flex-wrap: wrap; display: flex; align-items: center;">
-            <input style="padding: 4px 10px; width: 100%;" class="search-bar1" name="keyword" placeholder="Cari nama container" type="text" />
+            <input value="{{ request()->get('keyword') }}" style="padding: 4px 10px; width: 100%;" class="search-bar1" name="keyword" placeholder="Cari nama container" type="text" />
             <button class="search-button1" type="submit" style="margin-left: 10px;">
               <div class="search-button-background1"></div>
               <img class="search-icon1" alt="" src="/images/vector-11.svg" />

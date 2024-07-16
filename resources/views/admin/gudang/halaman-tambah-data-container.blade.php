@@ -18,12 +18,14 @@
     <div class="halaman-tambah-data-container">
       <header class="header6">
         <div class="image-9-parent4">
+          <a href="{{ route('dashboardGudang') }}">
           <img
             class="image-9-icon6"
             loading="lazy"
             alt=""
             src="/images/image-9@2x.png"
           />
+          </a>
 
           <div class="header-text-wrapper4">
             <a class="header-text6">Detail Tracking</a>

@@ -14,7 +14,9 @@
   <div class="halaman-tambah-data-report">
     <header class="header7">
       <div class="image-9-parent5">
-        <img class="image-9-icon7" loading="lazy" alt="" src="/images/image-91@2x.png" />
+        <a href="{{ route('dashboardGudang') }}">
+          <img class="image-9-icon7" loading="lazy" alt="" src="/images/image-91@2x.png" />
+        </a>
 
         <div class="header-text-wrapper5">
           <b class="header-text7">Detail Tracking</b>

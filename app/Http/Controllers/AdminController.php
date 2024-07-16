@@ -47,7 +47,7 @@ class AdminController extends Controller
         if ($keyword != null && $keyword != '') {
 
             return view('admin.gudang.halaman-search-gudang', [
-                'containers' => Container::where('vessel', 'like', '%' . $keyword . '%')->get()
+                'containers' => Container::where('vessel', 'like', '%' . $keyword . '%')->get(),
             ]);
         } else {
             return view('admin.gudang.halaman-search-gudang', [
