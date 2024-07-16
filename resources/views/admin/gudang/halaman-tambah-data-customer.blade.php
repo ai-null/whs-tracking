@@ -10,13 +10,16 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" />
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://unpkg.com/gijgo@1.9.14/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.14/css/gijgo.min.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
     <div class="halaman-tambah-data-customer">
         <header class="header4">
             <div class="image-9-parent2">
-                <img class="image-9-icon4" loading="lazy" alt="" src="/images/image-91@2x.png" />
+                <a href="{{ route('dashboardGudang') }}"><img class="image-9-icon4" loading="lazy" alt="" src="/images/image-91@2x.png" /></a>
 
                 <div class="header-text-wrapper2">
                     <b class="header-text4">Detail Tracking</b>
@@ -71,7 +74,7 @@
                     </div>
                     <div class="frame-wrapper4">
                         <div class="date-container">
-                            <input class="date2" placeholder="Date" type="text" name="date" />
+                            <input class="date2" style="border: none; font-size: 20px; font-family: Inter; color: #8a8a8a;" placeholder="Date" id="datepicker" name="date" >
                         </div>
                     </div>
                     <div class="frame-parent15">
@@ -129,6 +132,10 @@
 
 
     <script>
+        $('#datepicker').datepicker({
+            format: 'dd-mm-yyyy'
+        });
+
         jQuery(document).ready(function() {
             ImgUpload();
         });

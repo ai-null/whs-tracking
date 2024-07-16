@@ -58,7 +58,9 @@ class AdminController extends Controller
 
     public function addDataCustomer(Request $request)
     {
-        $date = new DateTime('2001-01-01');
+        // dd($request->date);
+
+        $date = new DateTime($request->date);
         $formattedDate = $date->format('Y-m-d H:i:s');
 
         $files = $request->file('photos');

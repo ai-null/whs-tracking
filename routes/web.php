@@ -46,7 +46,7 @@ Route::prefix('adminGudang')->middleware('auth')->group(function () {
     Route::get('/halaman-search-gudang', [AdminController::class, 'showDataContainer'])->name('dashboardGudang');
 
     Route::get('/{id}/halaman-tambah-data-customer', function (Request $request) {
-        return view('admin.gudang.halaman-tambah-data-customer', [ 'id' => $request->id ]);
+        return view('admin.gudang.halaman-tambah-data-customer', ['id' => $request->id]);
     })->name('dataCustomer');
 
     Route::get('/{idContainer}/halaman-edit-data-customer/{id}', function (Request $request) {
@@ -62,28 +62,31 @@ Route::prefix('adminGudang')->middleware('auth')->group(function () {
     })->name('editCustomer');
 
     Route::post('/{idContainer}/halaman-edit-data-customer/{id}', function (Request $request) {
-        $date = new DateTime('2001-01-01');
+        $date = new DateTime($request->date);
         $formattedDate = $date->format('Y-m-d H:i:s');
 
         $files = $request->file('photos');
 
-        $detailCustomer = detailCustomer::create([
-            'id_container' => $request->id,
-            'Bill_of_lading' => $request->billOfLading,
-            'Consignee' => $request->consignee,
-            'Quantity' => $request->qty,
-            'Volume' => $request->volume,
-            'date'  => $formattedDate,
-            'Report_condition' => $request->reportCondition,
-            'Status' => 'progress'
-        ]);
+        $detailCustomer = detailCustomer::find($request->id);
+
+        $containerId = $detailCustomer->id_container;
+
+        $detailCustomer->Bill_of_lading = $request->billOfLading;
+        $detailCustomer->Consignee = $request->consignee;
+        $detailCustomer->Quantity = $request->qty;
+        $detailCustomer->Volume = $request->volume;
+        $detailCustomer->date = $formattedDate;
+        $detailCustomer->Report_condition = $request->reportCondition;
+        $detailCustomer->Status = 'progress';
+
+        $detailCustomer->save();
 
 
         if ($files != null) {
             foreach ($files as $file) {
                 $fileName = time() . '_' . $file->getClientOriginalName();
                 $filePath = $file->storeAs('uploads', $fileName);
-    
+
                 Photo::create([
                     'file_name' => $fileName,
                     'file_path' => $filePath,
@@ -92,7 +95,9 @@ Route::prefix('adminGudang')->middleware('auth')->group(function () {
             }
         }
 
-        return redirect(route('dataReport', ['id' => $request->id]));
+        return redirect(route('dataReport', [
+            'id' => $containerId
+        ]));
     })->name('editCustomer');
 
     Route::post('/{id}/halaman-tambah-data-customer', [
@@ -101,7 +106,7 @@ Route::prefix('adminGudang')->middleware('auth')->group(function () {
     ])->name('dataCustomer');
 
     Route::get('/{id}/halaman-tambah-data-container', function (Request $request) {
-        return view('admin.gudang.halaman-tambah-data-container', [ 'id' => $request->id ]);
+        return view('admin.gudang.halaman-tambah-data-container', ['id' => $request->id]);
     })->name('dataContainer');
     Route::post('/{id}/halaman-tambah-data-container', [AdminController::class, 'addDataContainer'])->name('dataContainer');
 
