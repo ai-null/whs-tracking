@@ -11,7 +11,8 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://unpkg.com/gijgo@1.9.14/js/gijgo.min.js" type="text/javascript"></script>
     <link href="https://unpkg.com/gijgo@1.9.14/css/gijgo.min.css" rel="stylesheet" type="text/css" />
 </head>
@@ -20,7 +21,8 @@
     <div class="halaman-tambah-data-customer">
         <header class="header4">
             <div class="image-9-parent2">
-                <a href="{{ route('dashboardGudang') }}"><img class="image-9-icon4" loading="lazy" alt="" src="/images/image-91@2x.png" /></a>
+                <a href="{{ route('dashboardGudang') }}"><img class="image-9-icon4" loading="lazy" alt=""
+                        src="/images/image-91@2x.png" /></a>
 
                 <div class="header-text-wrapper2">
                     <b class="header-text4">Detail Tracking</b>
@@ -42,7 +44,7 @@
                 </div>
             </div>
         </header>
-        <form style="width: 100%;" action="{{ route('editCustomer', ['id' => $id, 'idContainer' => $idContainer]) }}"
+        <form style="width: 100%;" enctype="multipart/form-data" action="{{ route('editCustomer', ['id' => $id, 'idContainer' => $idContainer]) }}"
             method="POST">
             @csrf
             <main class="halaman-tambah-data-customer-inner">
@@ -77,7 +79,9 @@
                     </div>
                     <div class="frame-wrapper4">
                         <div class="date-container">
-                            <input class="date2" style="border: none; font-size: 20px; font-family: Inter; color: #8a8a8a;" id="datepicker" name="date" >
+                            <input class="date2"
+                                style="border: none; font-size: 20px; font-family: Inter; color: #8a8a8a;"
+                                id="datepicker" name="date">
                         </div>
                     </div>
                     <div class="frame-parent15">
@@ -88,6 +92,8 @@
                         <div class="upload-photo-button-wrapper">
                             <label class="upload-photo-button">
                                 <div class="upload-photo">Upload Photo</div>
+                                <input type="hidden" id="deleted_photos" name="deleted_photos" value="">
+
                                 <input type="file" name="photos[]" multiple="multiple" id="photos_upload"
                                     class="upload__inputfile"
                                     style=" width: .1px; height: .1px; opacity: 0; overflow: hidden; position: absolute; z-index: -1;">
@@ -103,14 +109,18 @@
                                 <div class="photos-11">
                                     <div class="nama-file-gambar3">{{ $photo->file_name }}</div>
                                     <img class="gambar-icon3" loading="lazy" alt=""
-                                        src="  /{{ $photo->file_path }} " />
+                                        src="/{{ $photo->file_path }}" />
+                                    <button type="button" class="delete-button2 delete-photos-button" bs-file-path="{{ $photo->file_path }}">
+                                        <div class="delete2">Delete</div><img class="vector-icon10" alt=""
+                                            src="/images/vector2.svg">
+                                    </button>
                                 </div>
                             @endforeach
                         </div>
                         <div class="frame-wrapper6">
                             <div class="cancel-button-parent">
-                                <a href="{{ route('dataReport', [ 'id' => $data->id_container ]) }}" style="text-decoration: none;"
-                                    class="cancel-button">
+                                <a href="{{ route('dataReport', ['id' => $data->id_container]) }}"
+                                    style="text-decoration: none;" class="cancel-button">
                                     <div class="cancel-button-child"></div>
                                     <b class="cancel">Cancel</b>
                                 </a>
@@ -176,13 +186,13 @@
                                         .name + "' ><div class='nama-file-gambar5'> " + f.name +
                                         " </div><img class='gambar-icon5' src='" +
                                         e.target.result +
-                                        "'> <button type='button' class='delete-button2'><div class='delete2'>Delete</div><img class='vector-icon10' alt='' src='/images/vector2.svg' /></button></div>";
+                                        "'> <button type='button' class='delete-button2 delete-upload-photos'><div class='delete2'>Delete</div><img class='vector-icon10' alt='' src='/images/vector2.svg' /></button></div>";
 
                                     //   <div class="photos-11">
                                     //   <div class="nama-file-gambar5">photos3.png</div>
                                     //   <img class="gambar-icon5" alt="" src="/images/gambar1@2x.png">
 
-                                    //   <button type="button" class="delete-button2">
+                                    //   <button type="button" class="delete-button2 delete-upload-photos">
                                     //     <div class="delete2">Delete</div>
                                     //     <img class="vector-icon10" alt="" src="/images/vector2.svg">
                                     //   </button>
@@ -204,7 +214,7 @@
                 });
             });
 
-            $('body').on('click', ".delete-button2", function(e) {
+            $('body').on('click', ".delete-upload-photos", function(e) {
                 var file = $(this).parent().data("file");
                 for (var i = 0; i < imgArray.length; i++) {
                     if (imgArray[i].name === file) {
@@ -213,7 +223,35 @@
                     }
                 }
                 $(this).parent().remove();
+                
             });
+
+            var deletePicture = [];
+            $('body').on('click', ".delete-photos-button", function(e) {
+                var file = $(this).parent().data("file");
+                for (var i = 0; i < imgArray.length; i++) {
+                    if (imgArray[i].name === file) {
+                        imgArray.splice(i, 1);
+                        break;
+                    }
+                }
+
+                deletePicture.push($(this).attr('bs-file-path'));
+
+                document.getElementById('deleted_photos').value = deletePicture;
+
+                $(this).parent().remove();
+                
+            });
+
+            // var deleteButtons = document.getElementsByClassName('delete-photos-button')
+
+            // for (let index = 0; index < deleteButtons.length; index++) {
+            //     const element = deleteButtons[index];
+            //     element.addEventListener('click', function (e) {
+            //         console.log(element.getAttribute('bs-file-path'))
+            //     });
+            // }
         }
     </script>
 </body>

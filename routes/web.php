@@ -6,6 +6,7 @@ use App\Models\detailCustomer;
 use App\Models\Photo;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 /*
 |--------------------------------------------------------------------------
@@ -79,7 +80,23 @@ Route::prefix('adminGudang')->middleware('auth')->group(function () {
         $detailCustomer->Report_condition = $request->reportCondition;
         $detailCustomer->Status = 'progress';
 
-        $detailCustomer->save();
+        if (!empty($request->deleted_photos)) {
+            $deletedFiles = explode(',',$request->deleted_photos);
+
+            if ($deletedFiles != null || count($deletedFiles) > 0) {
+                foreach ($deletedFiles as $deletedFile) {
+                    if (!File::exists(public_path($deletedFile))) {
+                        return abort(404, 'File not found');
+                    }
+                }
+    
+                foreach ($deletedFiles as $file) {
+                    File::delete(public_path($file));
+                    $photo = Photo::where('file_path', '=', $file)->get()->first();
+                    $photo->delete();
+                }
+            }
+        }
 
 
         if ($files != null) {
@@ -94,6 +111,8 @@ Route::prefix('adminGudang')->middleware('auth')->group(function () {
                 ]);
             }
         }
+
+        $detailCustomer->save();
 
         return redirect(route('dataReport', [
             'id' => $containerId

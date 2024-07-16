@@ -39,7 +39,7 @@
                     <div class="search-area">
                         <form action="{{ route('halaman-search-admin') }}" method="GET">
                             <div class="search-bar-parent">
-                                <input style="padding: 4px 16px" class="search-bar" type="text" name="keyword" />
+                                <input value="{{ request()->keyword }}" style="padding: 4px 16px" class="search-bar" type="text" name="keyword" />
 
                                 <button type="submit" class="search-button">
                                     <div class="search-button-background"></div>
@@ -60,9 +60,6 @@
                         <div class="frame-parent4">
                             <div class="pt-tjiwi-kimia-wrapper">
                                 <div class="pt-tjiwi-kimia">{{ $detailCustomer->Consignee }}</div>
-                            </div>
-                            <div class="status-pickup1">
-                                <b class="picked-up1">PICKED UP</b>
                             </div>
                         </div>
                         <div class="button-detail-2-inner">
